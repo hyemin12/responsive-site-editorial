@@ -1,4 +1,7 @@
+import Header from "../components/Header";
+import Layout from "../components/Layout";
+
 const Home = () => {
-  return <div></div>;
+  return <Layout></Layout>;
 };
 export default Home;

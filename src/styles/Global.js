@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 // font-family: 'Open Sans', sans-serif;
 
-const Global = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   *{
     padding:0;
     margin:0;
@@ -10,7 +10,16 @@ const Global = createGlobalStyle`
   }
   body{
     font-family: 'Roboto Slab', serif;
+    font-weight: 400;
     color: #3D4449;
   }
+  a {
+    color: #7f888f;
+    text-decoration:none;
+    transition:0.4s;
+    &:hover{
+      color: #f56a6a !important
+    }
+  }
 `;
-export default Global;
+export default GlobalStyle;

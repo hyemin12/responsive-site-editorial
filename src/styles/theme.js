@@ -15,7 +15,6 @@ const device = {
 const color = {
   point: "#f56a6a",
   grey: "#7f888f",
-  sns: "rgb(127,136,143)",
   default: "#3d4449",
 };
 
