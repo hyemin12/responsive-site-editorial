@@ -13,6 +13,9 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     color: #3D4449;
   }
+  h1,h2,h3,h4,h5,h6{
+    display:inline-block;
+  }
   a {
     color: #7f888f;
     text-decoration:none;

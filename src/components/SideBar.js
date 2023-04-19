@@ -1,51 +1,66 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import theme from "../styles/theme";
 
+import Menu from "./Menu";
 import Title from "./elements/Title";
 
-import Menu from "./Menu";
+import { FaSearch } from "react-icons/fa";
 
 const SideBar = () => {
-  const [visible, setVisible] = useState(false);
-
   return (
-    <Side>
-      <SearchBoxWrapper>
-        <form>
+    <Container>
+      <SearchBoxWrapper id="search-box">
+        <Form>
           <SearchBox type="text" name="editorial-search" placeholder="Search" />
-        </form>
+          <Icon>
+            <FaSearch />
+          </Icon>
+        </Form>
       </SearchBoxWrapper>
 
-      <MenuContainer>
-        <Title text={"Menu"} border={"bottom"} />
-        <ul>
-          <Menu />
-        </ul>
-      </MenuContainer>
-    </Side>
+      <Wrapper id="menu">
+        <Title text={"Menu"} border={"bottom"} padding={"2em 0"} />
+        <Menu />
+      </Wrapper>
+
+      <Wrapper>
+        <Title text={"Etiam Dolore"} border={"bottom"} padding={"2em 0"} />
+      </Wrapper>
+    </Container>
   );
 };
-const Side = styled.div`
+const Container = styled.div`
   width: 20vw;
   background-color: #f5f6f7;
+  padding: 1.25em;
 `;
 
 // Search
 const SearchBoxWrapper = styled.div`
+  width: 20vw;
   background-color: #eff1f2;
   padding: 1.25em;
-  margin-bottom: 1.5em;
+  margin-top: -1.25em;
+  margin-left: -1.25em;
+`;
+const Form = styled.form`
+  position: relative;
 `;
 const SearchBox = styled.input`
   width: 100%;
 `;
+const Icon = styled.i`
+  color: #7f888f;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+`;
 
-// Menu
-const MenuContainer = styled.div`
-  padding: 1.25em;
+const Wrapper = styled.div`
+  border-bottom: 1px solid #ccc;
 `;
 
 export default SideBar;
