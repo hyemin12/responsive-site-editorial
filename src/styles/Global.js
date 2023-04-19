@@ -21,5 +21,16 @@ const GlobalStyle = createGlobalStyle`
       color: #f56a6a !important
     }
   }
+  input {
+    border: 1px solid rgba(210,215,217,0.75);   border-radius: 5px;
+    padding:1em;
+    &:focus {
+      outline: 2px solid  #f56a6a;
+      border-color: #f56a6a;
+    }
+  }
+  li{
+    list-style:none;
+  }
 `;
 export default GlobalStyle;

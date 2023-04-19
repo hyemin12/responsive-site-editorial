@@ -18,6 +18,7 @@ const color = {
   default: "#3d4449",
 };
 
+// 127,136,143
 const flexBox = {
   flex: (direction = "row", align = "center", justify = "start") => `
   display:flex; 
