@@ -6,11 +6,12 @@ import Layout from "../components/Layout";
 import Title from "../components/elements/Title";
 import Img from "../components/elements/Img";
 import Feature from "../components/Feature";
+import MainPost from "../components/MainPost";
 
 import theme from "../styles/theme";
+import { data } from "../data";
 
 import { FaGem, FaPaperPlane, FaRocket, FaSignal } from "react-icons/fa";
-import MainPost from "../components/MainPost";
 
 const Home = () => {
   const features = [
@@ -39,10 +40,10 @@ const Home = () => {
   const requestPost = async () => {
     try {
       const res = await axios.get("http://localhost:4000/contents");
-      console.log(res.data);
       setPosts(res.data.slice(0, 6));
     } catch (err) {
       console.log(err);
+      setPosts(data.contents.slice(0, 6));
     }
   };
   console.log(posts);
@@ -124,7 +125,7 @@ const FeatureWrapper = styled.ul`
 
 const PostsWrapper = styled.ul`
   ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
-  gap: 2em;
+  // gap: 2em;
   flex-wrap: wrap;
   padding-top: 4em;
 `;
