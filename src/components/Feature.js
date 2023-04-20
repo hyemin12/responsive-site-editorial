@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import Icon from "./elements/Icon";
+
 import theme from "../styles/theme";
 
 const Feature = (props) => {
-  console.log(props);
   const { title, text, icon } = props;
   return (
     <FeatureItem theme={theme}>

@@ -28,7 +28,7 @@ const Menu = () => {
       {links.map(({ title, path, submenu }) => (
         <>
           {submenu ? (
-            <Li onClick={() => setVisible(!visible)}>
+            <Li key={title} onClick={() => setVisible(!visible)}>
               <SubMenu theme={theme}>
                 {title}
 
@@ -39,14 +39,14 @@ const Menu = () => {
 
               <SubMenuUl className="sub-menu" isVisible={visible}>
                 {submenu.map((element) => (
-                  <li>
+                  <li key={`${path}-${element}`}>
                     <SubNavItem to={`${path}-${element}`}>{element}</SubNavItem>
                   </li>
                 ))}
               </SubMenuUl>
             </Li>
           ) : (
-            <Li theme={theme}>
+            <Li key={title} theme={theme}>
               <NavItem to={path} theme={theme}>
                 {title}
               </NavItem>

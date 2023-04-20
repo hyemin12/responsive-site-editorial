@@ -1,13 +1,16 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 import Layout from "../components/Layout";
 import Title from "../components/elements/Title";
 import Img from "../components/elements/Img";
+import Feature from "../components/Feature";
 
 import theme from "../styles/theme";
 
 import { FaGem, FaPaperPlane, FaRocket, FaSignal } from "react-icons/fa";
-import Feature from "../components/Feature";
+import MainPost from "../components/MainPost";
 
 const Home = () => {
   const features = [
@@ -32,6 +35,20 @@ const Home = () => {
       icon: <FaSignal />,
     },
   ];
+  const [posts, setPosts] = useState([]);
+  const requestPost = async () => {
+    try {
+      const res = await axios.get("http://localhost:4000/contents");
+      console.log(res.data);
+      setPosts(res.data.slice(0, 6));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  console.log(posts);
+  useEffect(() => {
+    requestPost();
+  }, []);
   return (
     <Layout>
       <MainSection theme={theme}>
@@ -65,7 +82,7 @@ const Home = () => {
         <Title text={"Features"} size={"1.6em"} border={"bottom"} />
         <FeatureWrapper theme={theme}>
           {features.map((feature) => (
-            <Feature {...feature} />
+            <Feature {...feature} key={feature.title} />
           ))}
         </FeatureWrapper>
       </Section>
@@ -73,6 +90,9 @@ const Home = () => {
       {/* Posts */}
       <Section>
         <Title text={"Ipsum sed Posts"} size={"1.6em"} border={"bottom"} />
+        <PostsWrapper>
+          {posts && posts.map((post) => <MainPost {...post} key={post.id} />)}
+        </PostsWrapper>
       </Section>
     </Layout>
   );
@@ -96,6 +116,13 @@ const P = styled.p`
   margin-bottom: 3.25em;
 `;
 const FeatureWrapper = styled.ul`
+  ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
+  gap: 2em;
+  flex-wrap: wrap;
+  padding-top: 4em;
+`;
+
+const PostsWrapper = styled.ul`
   ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
   gap: 2em;
   flex-wrap: wrap;
