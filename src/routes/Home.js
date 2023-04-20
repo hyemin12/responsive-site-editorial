@@ -1,14 +1,40 @@
 import styled from "styled-components";
-import Header from "../components/Header";
+
 import Layout from "../components/Layout";
 import Title from "../components/elements/Title";
 import Img from "../components/elements/Img";
+
 import theme from "../styles/theme";
 
+import { FaGem, FaPaperPlane, FaRocket, FaSignal } from "react-icons/fa";
+import Feature from "../components/Feature";
+
 const Home = () => {
+  const features = [
+    {
+      title: "Portitor ullamcorper",
+      text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
+      icon: <FaGem />,
+    },
+    {
+      title: "Sapien veroeros",
+      text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
+      icon: <FaPaperPlane />,
+    },
+    {
+      title: "Quam lorem ipsum",
+      text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
+      icon: <FaRocket />,
+    },
+    {
+      title: "Sed magna finibus",
+      text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
+      icon: <FaSignal />,
+    },
+  ];
   return (
     <Layout>
-      <Section theme={theme}>
+      <MainSection theme={theme}>
         <div>
           <Title text={"Hi, I’m Editorial by HTML5 UP"} size={"3.3em"} />
           <SubTitle theme={theme}>
@@ -32,18 +58,33 @@ const Home = () => {
           }
           alt={"A FREE AND FULLY RESPONSIVE SITE TEMPLATE"}
         />
-      </Section>
+      </MainSection>
+
+      {/* FEATURES */}
       <Section>
-        <Title />
+        <Title text={"Features"} size={"1.6em"} border={"bottom"} />
+        <FeatureWrapper theme={theme}>
+          {features.map((feature) => (
+            <Feature {...feature} />
+          ))}
+        </FeatureWrapper>
+      </Section>
+
+      {/* Posts */}
+      <Section>
+        <Title text={"Ipsum sed Posts"} size={"1.6em"} border={"bottom"} />
       </Section>
     </Layout>
   );
 };
 
 const Section = styled.section`
+  padding: 4em 0;
+  border-bottom: 2px solid #ddd;
+`;
+const MainSection = styled(Section)`
   ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
   gap: 4em;
-  padding: 4em 0;
 `;
 const SubTitle = styled.h4`
   padding: 1.5em 0;
@@ -53,9 +94,12 @@ const SubTitle = styled.h4`
 `;
 const P = styled.p`
   margin-bottom: 3.25em;
-  font-family: "Open Sans", sans-serif;
-  color: ${({ theme }) => theme.color.grey};
-  font-size: 0.9em;
-  line-height: 1.6;
 `;
+const FeatureWrapper = styled.ul`
+  ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
+  gap: 2em;
+  flex-wrap: wrap;
+  padding-top: 4em;
+`;
+
 export default Home;

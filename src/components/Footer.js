@@ -15,6 +15,6 @@ const Footer = () => {
 };
 const P = styled.p`
   color: #7f888f;
-  font-size: 0.8em;
+  font-size: 0.75em;
 `;
 export default Footer;

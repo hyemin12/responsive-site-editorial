@@ -30,7 +30,7 @@ const Menu = () => {
           {submenu ? (
             <Li onClick={() => setVisible(!visible)}>
               <SubMenu theme={theme}>
-                <p>{title}</p>
+                {title}
 
                 <Icon isVisible={visible}>
                   <FaAngleDown />

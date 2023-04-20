@@ -51,7 +51,8 @@ const HeaderStyle = styled.header`
   border-bottom: 4px solid ${({ theme }) => theme.color.point};
 `;
 
-const Logo = styled.p`
+const Logo = styled.h4`
+  font-weight: 400;
   span {
     color: ${({ theme }) => theme.color.default};
     font-weight: 700;
