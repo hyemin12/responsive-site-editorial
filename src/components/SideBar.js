@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import theme from "../styles/theme";
@@ -7,6 +6,8 @@ import Menu from "./Menu";
 import Title from "./elements/Title";
 
 import { FaSearch } from "react-icons/fa";
+import Button from "./elements/Button";
+import Footer from "./Footer";
 
 const SideBar = () => {
   return (
@@ -27,7 +28,13 @@ const SideBar = () => {
 
       <Wrapper>
         <Title text={"Etiam Dolore"} border={"bottom"} padding={"2em 0"} />
+        <Button text={"more"} />
       </Wrapper>
+
+      <Wrapper>
+        <Title text={"Get in touch"} border={"bottom"} padding={"2em 0"} />
+      </Wrapper>
+      <Footer />
     </Container>
   );
 };

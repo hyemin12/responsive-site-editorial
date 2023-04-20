@@ -35,5 +35,23 @@ const GlobalStyle = createGlobalStyle`
   li{
     list-style:none;
   }
+  button{
+    
+    background-color:transparent;
+    padding:1em 2em;
+    border: 3px solid  #f56a6a;
+    border-radius:6px;
+    font-family: 'Roboto Slab', serif;
+    color:#f56a6a;
+    font-size:0.7em;
+    font-weight:700;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    transition:0.4s;
+    cursor:pointer;
+    &:hover{
+      background-color: rgba(245,106,106,0.05);
+    }
+  }
 `;
 export default GlobalStyle;

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const Title = ({ text, border, type, padding }) => {
+const Title = ({ text, border, type, padding, size }) => {
   return (
     <>
-      <H3 border={border} padding={padding}>
+      <H3 border={border} padding={padding} size={size}>
         {text}
       </H3>
     </>
@@ -11,7 +11,8 @@ const Title = ({ text, border, type, padding }) => {
 };
 
 const H3 = styled.h3`
-  font-size: 1.2em;
+  font-size: ${({ size }) => (size ? size : "1.2em")};
+
   padding: ${({ padding }) => (padding ? padding : 0)};
   ${({ border, theme }) =>
     border &&

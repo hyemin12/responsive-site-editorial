@@ -7,6 +7,13 @@ icons
 - FaDownload
 - FaSearch
 
+mainpage
+
+- FaGem
+- FaPaperPlane
+- FaRocket
+- FaSignal
+
 social
 
 - FaTwitter
