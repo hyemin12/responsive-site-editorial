@@ -9,7 +9,26 @@ import { FaSearch } from "react-icons/fa";
 import Button from "./elements/Button";
 import Footer from "./Footer";
 
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { data } from "../data";
+import SidePost from "./SidePost";
+
 const SideBar = () => {
+  const [posts, setPosts] = useState([]);
+  const requestPost = async () => {
+    try {
+      const res = await axios.get("http://localhost:4000/side");
+      setPosts(res.data);
+      console.log(res.data);
+    } catch (err) {
+      console.log(err);
+      setPosts(data.side);
+    }
+  };
+  useEffect(() => {
+    requestPost();
+  }, []);
   return (
     <Container>
       <SearchBoxWrapper id="search-box">
@@ -28,6 +47,7 @@ const SideBar = () => {
 
       <Wrapper>
         <Title text={"Etiam Dolore"} border={"bottom"} padding={"2em 0"} />
+        {posts && posts.map((post) => <SidePost key={post.id} {...post} />)}
       </Wrapper>
 
       <Wrapper>

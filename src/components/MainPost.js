@@ -29,7 +29,7 @@ const MainPost = (props) => {
 const PostItem = styled.li`
   width: calc((100% - 2em) / 2);
   border-bottom: 1px solid #ddd;
-  padding-top: 2em;
+  padding-top: 3em;
   padding-bottom: 2em;
   &:nth-child(odd) {
     border-right: 1px solid #ddd;
@@ -41,6 +41,10 @@ const PostItem = styled.li`
   &:nth-child(5),
   &:nth-child(6) {
     border-bottom: none;
+  }
+  &:nth-child(1),
+  &:nth-child(2) {
+    padding-top: 0;
   }
 `;
 
