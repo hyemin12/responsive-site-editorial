@@ -12,7 +12,11 @@ const MainPost = (props) => {
       <Img width={"100%"} ratio={"13/8"} src={img} alt={title} type={"link"} />
       <br />
       <Title text={title} />
-      <P>{text.split("\n")[0]}</P>
+      <TextWrapper>
+        {text.split("\n").map((paragh, idx) => (
+          <p key={idx}>{paragh}</p>
+        ))}
+      </TextWrapper>
       <button>more</button>
     </PostItem>
   );
@@ -30,7 +34,8 @@ const PostItem = styled.li`
     padding-left: 2em;
   }
 `;
-const P = styled.p`
+
+const TextWrapper = styled.div`
   padding-top: 1em;
   margin-bottom: 2em;
   display: -webkit-box;
@@ -38,4 +43,5 @@ const P = styled.p`
   -webkit-box-orient: vertical;
   overflow: hidden;
 `;
+
 export default MainPost;

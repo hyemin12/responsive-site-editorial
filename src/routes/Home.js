@@ -37,6 +37,11 @@ const Home = () => {
     },
   ];
   const [posts, setPosts] = useState([]);
+
+  /** 포스트 데이터 가져오는 함수
+   * - json-server를 실행하면 서버에서 데이터를 가져오기
+   * - 서버에서 데이터 가져오는 것을 실패하면 data.js 파일에서 데이터 가져오기
+   */
   const requestPost = async () => {
     try {
       const res = await axios.get("http://localhost:4000/contents");
@@ -46,10 +51,11 @@ const Home = () => {
       setPosts(data.contents.slice(0, 6));
     }
   };
-  console.log(posts);
+
   useEffect(() => {
     requestPost();
   }, []);
+
   return (
     <Layout>
       <MainSection theme={theme}>
@@ -102,6 +108,9 @@ const Home = () => {
 const Section = styled.section`
   padding: 4em 0;
   border-bottom: 2px solid #ddd;
+  &:last-child {
+    border-bottom: none;
+  }
 `;
 const MainSection = styled(Section)`
   ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
@@ -125,7 +134,6 @@ const FeatureWrapper = styled.ul`
 
 const PostsWrapper = styled.ul`
   ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
-  // gap: 2em;
   flex-wrap: wrap;
   padding-top: 4em;
 `;
