@@ -28,7 +28,6 @@ const SideBar = () => {
 
       <Wrapper>
         <Title text={"Etiam Dolore"} border={"bottom"} padding={"2em 0"} />
-        <Button text={"more"} />
       </Wrapper>
 
       <Wrapper>

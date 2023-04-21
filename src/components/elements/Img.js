@@ -5,12 +5,12 @@ const Img = ({ type, src, alt, width, height, ratio, path }) => {
   if (type === "link")
     return (
       <ImgLink width={width} ratio={ratio} to={path}>
-        <Image src={src} alt={alt} />
+        <Image src={src} alt={alt} type={type} />
       </ImgLink>
     );
   return (
     <ImgWrapper width={width} height={height} ratio={ratio}>
-      <Image src={src} alt={alt} />
+      <Image src={src} alt={alt} type={type} />
     </ImgWrapper>
   );
 };
@@ -38,8 +38,10 @@ const Image = styled.img`
   transform: translate(-50%, -50%);
   object-fit: cover;
   transition: 0.4s;
-  &:hover {
+  ${({ type }) =>
+    type === "link" &&
+    `&:hover {
     transform: translate(-50%, -50%) scale(1.1);
-  }
+  }`}
 `;
 export default Img;

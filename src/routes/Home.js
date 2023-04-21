@@ -14,29 +14,8 @@ import { data } from "../data";
 import { FaGem, FaPaperPlane, FaRocket, FaSignal } from "react-icons/fa";
 
 const Home = () => {
-  const features = [
-    {
-      title: "Portitor ullamcorper",
-      text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
-      icon: <FaGem />,
-    },
-    {
-      title: "Sapien veroeros",
-      text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
-      icon: <FaPaperPlane />,
-    },
-    {
-      title: "Quam lorem ipsum",
-      text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
-      icon: <FaRocket />,
-    },
-    {
-      title: "Sed magna finibus",
-      text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
-      icon: <FaSignal />,
-    },
-  ];
   const [posts, setPosts] = useState([]);
+  const features = data.features;
 
   /** 포스트 데이터 가져오는 함수
    * - json-server를 실행하면 서버에서 데이터를 가져오기
@@ -88,9 +67,10 @@ const Home = () => {
       <Section>
         <Title text={"Features"} size={"1.6em"} border={"bottom"} />
         <FeatureWrapper theme={theme}>
-          {features.map((feature) => (
-            <Feature {...feature} key={feature.title} />
-          ))}
+          {features &&
+            features.map((feature) => (
+              <Feature {...feature} key={feature.title} />
+            ))}
         </FeatureWrapper>
       </Section>
 

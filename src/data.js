@@ -1,3 +1,5 @@
+import { FaGem, FaPaperPlane, FaRocket, FaSignal } from "react-icons/fa";
+
 export const data = {
   contents: [
     {
@@ -62,6 +64,28 @@ export const data = {
       category: "Adipicing",
       text: "",
       img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    },
+  ],
+  features: [
+    {
+      title: "Portitor ullamcorper",
+      text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
+      icon: <FaGem />,
+    },
+    {
+      title: "Sapien veroeros",
+      text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
+      icon: <FaPaperPlane />,
+    },
+    {
+      title: "Quam lorem ipsum",
+      text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
+      icon: <FaRocket />,
+    },
+    {
+      title: "Sed magna finibus",
+      text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
+      icon: <FaSignal />,
     },
   ],
 };

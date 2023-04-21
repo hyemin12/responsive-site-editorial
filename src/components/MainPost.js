@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import Img from "./elements/Img";
 import Title from "./elements/Title";
 
 const MainPost = (props) => {
+  const navigate = useNavigate();
   const { title, id, text, img } = props;
+
+  const handleNavigate = () => {
+    navigate(`/${id}`);
+  };
 
   return (
     <PostItem>
@@ -17,7 +22,7 @@ const MainPost = (props) => {
           <p key={idx}>{paragh}</p>
         ))}
       </TextWrapper>
-      <button>more</button>
+      <button onClick={handleNavigate}>more</button>
     </PostItem>
   );
 };
@@ -33,6 +38,10 @@ const PostItem = styled.li`
   &:nth-child(even) {
     padding-left: 2em;
   }
+  &:nth-child(5),
+  &:nth-child(6) {
+    border-bottom: none;
+  }
 `;
 
 const TextWrapper = styled.div`
@@ -43,5 +52,4 @@ const TextWrapper = styled.div`
   -webkit-box-orient: vertical;
   overflow: hidden;
 `;
-
 export default MainPost;
