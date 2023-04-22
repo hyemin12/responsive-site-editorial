@@ -40,6 +40,9 @@ const GlobalStyle = createGlobalStyle`
       border-color: #f56a6a;
     }
   }
+  i{
+    color:${({ theme }) => theme.color.point};font-size:1.2em;
+  }
   li{
     list-style:none;
   }

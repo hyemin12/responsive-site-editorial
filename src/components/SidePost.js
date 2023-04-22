@@ -2,9 +2,9 @@ import styled from "styled-components";
 import Img from "./elements/Img";
 
 const SidePost = (props) => {
-  const { id, title, text, img } = props;
+  const { id, title, text, img, idx } = props;
   return (
-    <Article>
+    <Article idx={idx}>
       <Img
         width={"100%"}
         ratio={"91/55"}
@@ -20,13 +20,10 @@ const SidePost = (props) => {
 const Article = styled.article`
   padding: 2em 0;
   border-bottom: 1px solid #ddd;
-  &:first-child {
-    padding-top: 0;
-  }
+  ${({ idx }) => idx === 0 && `padding-top:0`}
 `;
 const P = styled.p`
   padding-top: 1.5em;
-
   font-size: 0.8em;
   display: -webkit-box;
   -webkit-line-clamp: 2;

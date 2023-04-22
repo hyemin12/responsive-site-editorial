@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -16,6 +16,7 @@ import { FaSearch, FaEnvelope, FaPhone, FaHome } from "react-icons/fa";
 
 const SideBar = () => {
   const [posts, setPosts] = useState([]);
+  const sideBarRef = useRef(null);
   const requestPost = async () => {
     try {
       const res = await axios.get("http://localhost:4000/side");
@@ -29,8 +30,31 @@ const SideBar = () => {
   useEffect(() => {
     requestPost();
   }, []);
+  const handleSideBar = () => {
+    // console.log(window.scrollY);
+    if (sideBarRef.current) {
+      const sidebarHeight = sideBarRef.current.clientHeight;
+      const documentHeight = document.documentElement.clientHeight;
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY === sidebarHeight - documentHeight) {
+        sideBarRef.current.style.position = "fixed";
+      }
+      console.log(
+        sideBarRef.current,
+        sidebarHeight,
+        documentHeight,
+        currentScrollY,
+        sidebarHeight - documentHeight
+      );
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleSideBar);
+    return () => window.removeEventListener("scroll", handleSideBar);
+  }, []);
   return (
-    <Container>
+    <Container ref={sideBarRef}>
       <SearchBoxWrapper id="search-box">
         <Form>
           <SearchBox type="text" name="editorial-search" placeholder="Search" />
@@ -48,7 +72,10 @@ const SideBar = () => {
 
       <Wrapper>
         <Title text={"Etiam Dolore"} border={"bottom"} padding={"2em 0"} />
-        {posts && posts.map((post) => <SidePost key={post.id} {...post} />)}
+        {posts &&
+          posts.map((post, idx) => (
+            <SidePost key={post.id} {...post} idx={idx} />
+          ))}
       </Wrapper>
 
       <Wrapper>
@@ -59,24 +86,24 @@ const SideBar = () => {
           facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
         </P>
         <Row>
-          <Icon>
+          <i>
             <FaEnvelope />
-          </Icon>
+          </i>
           <HyperLink
             path={"https://mail.google.com/mail/u/0/#inbox"}
             text={"information@untitled.tld"}
           />
         </Row>
         <Row>
-          <Icon>
+          <i>
             <FaPhone />
-          </Icon>
+          </i>
           <p>(000) 000-0000</p>
         </Row>
         <Row>
-          <Icon>
+          <i>
             <FaHome />
-          </Icon>
+          </i>
           <p>1234 Somewhere Road #8254 Nashville, TN 00000-0000</p>
         </Row>
       </Wrapper>
@@ -128,10 +155,6 @@ const Row = styled.div`
   &:last-child {
     border-bottom: none;
   }
-`;
-const Icon = styled.i`
-  padding-top: 0.25em;
-  color: ${({ theme }) => theme.color.point};
 `;
 
 export default SideBar;
