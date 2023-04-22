@@ -109,13 +109,13 @@ const FeatureWrapper = styled.ul`
   ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
   gap: 2em;
   flex-wrap: wrap;
-  padding-top: 4em;
+  // padding-top: 4em;
 `;
 
 const PostsWrapper = styled.ul`
   ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
   flex-wrap: wrap;
-  padding-top: 4em;
+  // padding-top: 4em;
 `;
 
 export default Home;

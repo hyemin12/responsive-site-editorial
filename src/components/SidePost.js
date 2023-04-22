@@ -20,6 +20,9 @@ const SidePost = (props) => {
 const Article = styled.article`
   padding: 2em 0;
   border-bottom: 1px solid #ddd;
+  &:first-child {
+    padding-top: 0;
+  }
 `;
 const P = styled.p`
   padding-top: 1.5em;

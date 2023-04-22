@@ -1,18 +1,18 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 import theme from "../styles/theme";
 
 import Menu from "./Menu";
 import Title from "./elements/Title";
-
-import { FaSearch } from "react-icons/fa";
-import Button from "./elements/Button";
+import SidePost from "./SidePost";
+import HyperLink from "./elements/HyperLink";
 import Footer from "./Footer";
 
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { data } from "../data";
-import SidePost from "./SidePost";
+
+import { FaSearch, FaEnvelope, FaPhone, FaHome } from "react-icons/fa";
 
 const SideBar = () => {
   const [posts, setPosts] = useState([]);
@@ -34,14 +34,15 @@ const SideBar = () => {
       <SearchBoxWrapper id="search-box">
         <Form>
           <SearchBox type="text" name="editorial-search" placeholder="Search" />
-          <Icon>
+          <SearchIcon>
             <FaSearch />
-          </Icon>
+          </SearchIcon>
         </Form>
       </SearchBoxWrapper>
 
       <Wrapper id="menu">
         <Title text={"Menu"} border={"bottom"} padding={"2em 0"} />
+
         <Menu />
       </Wrapper>
 
@@ -52,6 +53,32 @@ const SideBar = () => {
 
       <Wrapper>
         <Title text={"Get in touch"} border={"bottom"} padding={"2em 0"} />
+        <P>
+          Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit
+          lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam
+          facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
+        </P>
+        <Row>
+          <Icon>
+            <FaEnvelope />
+          </Icon>
+          <HyperLink
+            path={"https://mail.google.com/mail/u/0/#inbox"}
+            text={"information@untitled.tld"}
+          />
+        </Row>
+        <Row>
+          <Icon>
+            <FaPhone />
+          </Icon>
+          <p>(000) 000-0000</p>
+        </Row>
+        <Row>
+          <Icon>
+            <FaHome />
+          </Icon>
+          <p>1234 Somewhere Road #8254 Nashville, TN 00000-0000</p>
+        </Row>
       </Wrapper>
       <Footer />
     </Container>
@@ -77,7 +104,7 @@ const Form = styled.form`
 const SearchBox = styled.input`
   width: 100%;
 `;
-const Icon = styled.i`
+const SearchIcon = styled.i`
   color: #7f888f;
   position: absolute;
   top: 50%;
@@ -87,6 +114,24 @@ const Icon = styled.i`
 
 const Wrapper = styled.div`
   border-bottom: 1px solid #ccc;
+`;
+const P = styled.p`
+  margin-bottom: 1em;
+  font-size: 0.8em;
+`;
+
+const Row = styled.div`
+  ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
+  gap: 1em;
+  padding: 1em 0;
+  border-bottom: 1px solid #ddd;
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+const Icon = styled.i`
+  padding-top: 0.25em;
+  color: ${({ theme }) => theme.color.point};
 `;
 
 export default SideBar;

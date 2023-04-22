@@ -63,7 +63,6 @@ const Menu = () => {
 const Li = styled.li`
   border-top: 1px solid #ddd;
   &:first-child {
-    padding-top: 1.5em;
     border: none;
   }
 `;
