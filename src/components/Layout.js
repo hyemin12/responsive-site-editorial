@@ -19,6 +19,6 @@ const Container = styled.div`
 `;
 const Main = styled.div`
   width: 80vw;
-  padding: 3em 5em;
+  padding: 7em 5em;
 `;
 export default Layout;

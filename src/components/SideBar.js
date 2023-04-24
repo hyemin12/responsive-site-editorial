@@ -55,9 +55,9 @@ const SideBar = () => {
   }, []);
 
   return (
-    <Container>
-      <Inner ref={innerRef}>
-        <SearchBoxWrapper id="search-box">
+    <Container theme={theme}>
+      <Inner ref={innerRef} theme={theme}>
+        <SearchBoxWrapper id="search-box" theme={theme}>
           <Form>
             <SearchBox
               type="text"
@@ -137,11 +137,18 @@ const SideBar = () => {
 const Container = styled.div`
   width: 20vw;
   background-color: #f5f6f7;
+  @media ${({ theme }) => theme.device.desktopWide} {
+    width: 22vw;
+  }
 `;
 const Inner = styled.div`
   width: 20vw;
   padding: 1.25em;
   background-color: #f5f6f7;
+  @media ${({ theme }) => theme.device.desktopWide} {
+    width: 22vw;
+    padding: 2em;
+  }
 `;
 
 // Search
@@ -151,6 +158,12 @@ const SearchBoxWrapper = styled.div`
   padding: 1.25em;
   margin-top: -1.25em;
   margin-left: -1.25em;
+  @media ${({ theme }) => theme.device.desktopWide} {
+    width: 22vw;
+    padding: 2em;
+    margin-top: -2em;
+    margin-left: -2em;
+  }
 `;
 const Form = styled.form`
   position: relative;

@@ -74,8 +74,15 @@ const NavItem = styled(Link)`
   color: ${({ theme }) => theme.color.default};
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  @media ${({ theme }) => theme.device.desktopWide} {
+    font-size: 0.9em;
+  }
 `;
-
+const SubMenuUl = styled.ul`
+  display: none;
+  padding: 1em 0;
+  ${({ isVisible }) => isVisible && `display: block;`}
+`;
 const SubMenu = styled(NavItem)`
   ${({ theme }) => theme.flexBox.flex("row", "center", "space-between")};
   &:hover i {
@@ -87,12 +94,9 @@ const SubNavItem = styled(Link)`
   padding: 0.5em 0;
   margin-left: 20px;
   font-size: 0.8em;
-`;
-
-const SubMenuUl = styled.ul`
-  display: none;
-  margin-bottom: 1em;
-  ${({ isVisible }) => isVisible && `display: block;`}
+  @media ${({ theme }) => theme.device.desktopWide} {
+    font-size: 0.9em;
+  }
 `;
 
 const Icon = styled(I)`
