@@ -117,6 +117,7 @@ const FeatureWrapper = styled.ul`
 const PostsWrapper = styled.ul`
   ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
   flex-wrap: wrap;
+  width: 100%;
 `;
 
 export default Home;
