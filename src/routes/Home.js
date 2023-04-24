@@ -54,8 +54,10 @@ const Home = () => {
         </div>
 
         <Img
-          width={"33em"}
-          height={"27em"}
+          width={"50%"}
+          height={"100%"}
+          imgWidth={"auto"}
+          ratio={"88 / 69"}
           src={
             "https://images.unsplash.com/photo-1547692098-b139f1ea4cbf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
           }
@@ -98,24 +100,23 @@ const MainSection = styled(Section)`
 `;
 const SubTitle = styled.h4`
   padding: 1.5em 0;
+  font-size: 1em;
   color: ${({ theme }) => theme.color.grey};
   font-weight: 400;
   text-transform: uppercase;
 `;
 const P = styled.p`
-  margin-bottom: 3.25em;
+  margin-bottom: 2em;
 `;
 const FeatureWrapper = styled.ul`
   ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
   gap: 2em;
   flex-wrap: wrap;
-  // padding-top: 4em;
 `;
 
 const PostsWrapper = styled.ul`
   ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
   flex-wrap: wrap;
-  // padding-top: 4em;
 `;
 
 export default Home;

@@ -1,4 +1,5 @@
 const breakPoint = {
+  desktopWide: 1681,
   desktop: 1281,
   tablet: 1280,
   tabletPortrait: 980,
@@ -6,6 +7,7 @@ const breakPoint = {
 };
 
 const device = {
+  desktopWide: `screen and (min-width:${breakPoint.desktopWide}px)`,
   desktop: `screen and (min-width:${breakPoint.desktop}px)`,
   tablet: `screen and (max-width:${breakPoint.tablet}px)`,
   tabletPortrait: `screen and (max-width:${breakPoint.tabletPortrait}px)`,

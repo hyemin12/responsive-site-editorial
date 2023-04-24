@@ -61,16 +61,19 @@ const Menu = () => {
 };
 
 const Li = styled.li`
+  padding: 1em 0;
   border-top: 1px solid #ddd;
   &:first-child {
+    padding-top: 0;
     border: none;
   }
 `;
 const NavItem = styled(Link)`
   display: block;
-  padding: 1em 0;
-  font-size: 0.9em;
+  font-size: 0.7em;
   color: ${({ theme }) => theme.color.default};
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 `;
 
 const SubMenu = styled(NavItem)`

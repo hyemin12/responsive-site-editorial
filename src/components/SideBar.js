@@ -48,6 +48,7 @@ const SideBar = () => {
       }
     }
   };
+
   useEffect(() => {
     window.addEventListener("scroll", handleSideBar);
     return () => window.removeEventListener("scroll", handleSideBar);
@@ -70,13 +71,23 @@ const SideBar = () => {
         </SearchBoxWrapper>
 
         <Wrapper id="menu">
-          <Title text={"Menu"} border={"bottom"} padding={"2em 0"} />
+          <Title
+            text={"Menu"}
+            border={"bottom"}
+            padding={"2em 0"}
+            size={"1.4em"}
+          />
 
           <Menu />
         </Wrapper>
 
         <Wrapper>
-          <Title text={"Etiam Dolore"} border={"bottom"} padding={"2em 0"} />
+          <Title
+            text={"Etiam Dolore"}
+            border={"bottom"}
+            padding={"2em 0"}
+            size={"1.4em"}
+          />
           {posts &&
             posts.map((post, idx) => (
               <SidePost key={post.id} {...post} idx={idx} />
@@ -84,7 +95,12 @@ const SideBar = () => {
         </Wrapper>
 
         <Wrapper>
-          <Title text={"Get in touch"} border={"bottom"} padding={"2em 0"} />
+          <Title
+            text={"Get in touch"}
+            border={"bottom"}
+            padding={"2em 0"}
+            size={"1.4em"}
+          />
           <P>
             Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit
             lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam

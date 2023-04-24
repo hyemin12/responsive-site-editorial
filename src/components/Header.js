@@ -39,12 +39,13 @@ const Header = () => {
       <SocialWrapper className="socials" theme={theme}>
         {socials &&
           socials.map(({ name, icon, path }) => (
-            <HyperLink key={name} text={icon} path={path} />
+            <HyperLink key={name} text={icon} path={path} size={"1.1em"} />
           ))}
       </SocialWrapper>
     </HeaderStyle>
   );
 };
+
 const HeaderStyle = styled.header`
   ${({ theme }) => theme.flexBox.flex("row", "center", "space-between")}
   padding-bottom:1em;

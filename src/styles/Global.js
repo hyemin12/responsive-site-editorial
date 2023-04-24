@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
   h1,h2,h3,h4,h5,h6{
     display:inline-block;
   }
+  
   p {
     font-family: "Open Sans", sans-serif;
     color: ${({ theme }) => theme.color.grey};

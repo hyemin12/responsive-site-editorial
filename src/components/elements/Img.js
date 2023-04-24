@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
-const Img = ({ type, src, alt, width, height, ratio, path }) => {
+const Img = ({ type, src, alt, width, height, ratio, path, imgWidth }) => {
   if (type === "link")
     return (
       <ImgLink width={width} ratio={ratio} to={path}>
@@ -10,7 +10,7 @@ const Img = ({ type, src, alt, width, height, ratio, path }) => {
     );
   return (
     <ImgWrapper width={width} height={height} ratio={ratio}>
-      <Image src={src} alt={alt} type={type} />
+      <Image src={src} alt={alt} type={type} imgWidth={imgWidth} />
     </ImgWrapper>
   );
 };
@@ -31,7 +31,7 @@ const ImgLink = styled(Link)`
   ${ImgStyle}
 `;
 const Image = styled.img`
-  width: 100%;
+  width: ${({ imgWidth }) => (imgWidth ? "auto" : "100%")};
   position: absolute;
   top: 50%;
   left: 50%;
