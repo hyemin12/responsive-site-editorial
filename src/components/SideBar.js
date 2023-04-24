@@ -16,7 +16,7 @@ import { FaSearch, FaEnvelope, FaPhone, FaHome } from "react-icons/fa";
 
 const SideBar = () => {
   const [posts, setPosts] = useState([]);
-  const sideBarRef = useRef(null);
+  const innerRef = useRef(null);
   const requestPost = async () => {
     try {
       const res = await axios.get("http://localhost:4000/side");
@@ -30,91 +30,102 @@ const SideBar = () => {
   useEffect(() => {
     requestPost();
   }, []);
+  // 특정 높이가 되면 사이드바 고정시키기
   const handleSideBar = () => {
-    // console.log(window.scrollY);
-    if (sideBarRef.current) {
-      const sidebarHeight = sideBarRef.current.clientHeight;
+    if (innerRef.current) {
+      const sidebarHeight = innerRef.current.clientHeight;
       const documentHeight = document.documentElement.clientHeight;
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY === sidebarHeight - documentHeight) {
-        sideBarRef.current.style.position = "fixed";
+      if (currentScrollY >= sidebarHeight - documentHeight) {
+        innerRef.current.style.position = "fixed";
+        innerRef.current.style.top = `-${
+          innerRef.current.clientHeight - documentHeight
+        }px`;
+      } else {
+        innerRef.current.style.position = "relative";
+        innerRef.current.style.top = 0;
       }
-      console.log(
-        sideBarRef.current,
-        sidebarHeight,
-        documentHeight,
-        currentScrollY,
-        sidebarHeight - documentHeight
-      );
     }
   };
   useEffect(() => {
     window.addEventListener("scroll", handleSideBar);
     return () => window.removeEventListener("scroll", handleSideBar);
   }, []);
+
   return (
-    <Container ref={sideBarRef}>
-      <SearchBoxWrapper id="search-box">
-        <Form>
-          <SearchBox type="text" name="editorial-search" placeholder="Search" />
-          <SearchIcon>
-            <FaSearch />
-          </SearchIcon>
-        </Form>
-      </SearchBoxWrapper>
+    <Container>
+      <Inner ref={innerRef}>
+        <SearchBoxWrapper id="search-box">
+          <Form>
+            <SearchBox
+              type="text"
+              name="editorial-search"
+              placeholder="Search"
+            />
+            <SearchIcon>
+              <FaSearch />
+            </SearchIcon>
+          </Form>
+        </SearchBoxWrapper>
 
-      <Wrapper id="menu">
-        <Title text={"Menu"} border={"bottom"} padding={"2em 0"} />
+        <Wrapper id="menu">
+          <Title text={"Menu"} border={"bottom"} padding={"2em 0"} />
 
-        <Menu />
-      </Wrapper>
+          <Menu />
+        </Wrapper>
 
-      <Wrapper>
-        <Title text={"Etiam Dolore"} border={"bottom"} padding={"2em 0"} />
-        {posts &&
-          posts.map((post, idx) => (
-            <SidePost key={post.id} {...post} idx={idx} />
-          ))}
-      </Wrapper>
+        <Wrapper>
+          <Title text={"Etiam Dolore"} border={"bottom"} padding={"2em 0"} />
+          {posts &&
+            posts.map((post, idx) => (
+              <SidePost key={post.id} {...post} idx={idx} />
+            ))}
+        </Wrapper>
 
-      <Wrapper>
-        <Title text={"Get in touch"} border={"bottom"} padding={"2em 0"} />
-        <P>
-          Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit
-          lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam
-          facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
-        </P>
-        <Row>
-          <i>
-            <FaEnvelope />
-          </i>
-          <HyperLink
-            path={"https://mail.google.com/mail/u/0/#inbox"}
-            text={"information@untitled.tld"}
-          />
-        </Row>
-        <Row>
-          <i>
-            <FaPhone />
-          </i>
-          <p>(000) 000-0000</p>
-        </Row>
-        <Row>
-          <i>
-            <FaHome />
-          </i>
-          <p>1234 Somewhere Road #8254 Nashville, TN 00000-0000</p>
-        </Row>
-      </Wrapper>
-      <Footer />
+        <Wrapper>
+          <Title text={"Get in touch"} border={"bottom"} padding={"2em 0"} />
+          <P>
+            Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit
+            lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam
+            facilisis ante interdum. Sed nulla amet lorem feugiat tempus
+            aliquam.
+          </P>
+          <Row>
+            <i>
+              <FaEnvelope />
+            </i>
+            <HyperLink
+              path={"https://mail.google.com/mail/u/0/#inbox"}
+              text={"information@untitled.tld"}
+            />
+          </Row>
+          <Row>
+            <i>
+              <FaPhone />
+            </i>
+            <p>(000) 000-0000</p>
+          </Row>
+          <Row>
+            <i>
+              <FaHome />
+            </i>
+            <p>1234 Somewhere Road #8254 Nashville, TN 00000-0000</p>
+          </Row>
+        </Wrapper>
+        <Footer />
+      </Inner>
     </Container>
   );
 };
 const Container = styled.div`
   width: 20vw;
   background-color: #f5f6f7;
+`;
+const Inner = styled.div`
+  width: 20vw;
   padding: 1.25em;
+  background-color: #f5f6f7;
 `;
 
 // Search
