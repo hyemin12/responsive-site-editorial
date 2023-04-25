@@ -50,6 +50,8 @@ const HeaderStyle = styled.header`
   ${({ theme }) => theme.flexBox.flex("row", "center", "space-between")}
   padding-bottom:1em;
   border-bottom: 4px solid ${({ theme }) => theme.color.point};
+  p {
+  }
 `;
 
 const Logo = styled.h4`
@@ -62,11 +64,17 @@ const Logo = styled.h4`
   &:hover span {
     color: ${({ theme }) => theme.color.point};
   }
+  @media ${({ theme }) => theme.device.desktopWide} {
+    font-size: 1.4em;
+  }
 `;
 
 const SocialWrapper = styled.div`
   ${({ theme }) => theme.flexBox.flex()};
   gap: 1em;
   font-size: 1em;
+  @media ${({ theme }) => theme.device.desktopWide} {
+    font-size: 1.4em;
+  }
 `;
 export default Header;

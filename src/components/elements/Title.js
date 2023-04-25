@@ -8,7 +8,7 @@ const Title = ({ text, border, type, padding, size }) => {
   );
 };
 
-const H3 = styled.h3`
+export const H3 = styled.h3`
   font-size: ${({ size }) => (size ? size : "1.2em")};
 
   padding: ${({ padding }) => (padding ? padding : 0)};

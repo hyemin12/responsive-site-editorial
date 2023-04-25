@@ -23,6 +23,9 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.color.grey};
     font-size: 0.9em;
     line-height: 1.6;
+    @media ${({ theme }) => theme.device.desktopWide}{
+      font-size:1em !important;
+    };
   }
   a {
     color: #7f888f;
@@ -42,7 +45,8 @@ const GlobalStyle = createGlobalStyle`
     }
   }
   i{
-    color:${({ theme }) => theme.color.point};font-size:1.2em;
+    color:${({ theme }) => theme.color.point};
+    font-size:1.2em;
   }
   li{
     list-style:none;
