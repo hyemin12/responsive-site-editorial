@@ -40,6 +40,10 @@ const FeatureIcon = styled.span`
     top: 50%;
     transform: translateY(-25%) rotate(45deg);
   }
+  @media ${({ theme }) => theme.device.desktopWide} {
+    width: 7em;
+    height: 7em;
+  }
 `;
 const I = styled.i`
   color: ${({ theme }) => theme.color.point};
@@ -47,7 +51,7 @@ const I = styled.i`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translateX(-50%);
 `;
 
 const H4 = styled.h4`
