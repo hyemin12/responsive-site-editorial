@@ -16,8 +16,6 @@ const Layout = ({ children }) => {
       sideBarRef.current.style.marginLeft = `${
         sideBarRef.current.clientWidth * -1
       }px`;
-      console.log(sideBarRef.current.clientWidth * -1, sideBarRef);
-      // console.log(sideBarRef);
     } else {
       sideBarRef.current.style.marginLeft = 0;
     }
