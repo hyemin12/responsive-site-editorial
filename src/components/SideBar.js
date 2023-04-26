@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -14,14 +14,13 @@ import { data } from "../data";
 
 import { FaSearch, FaEnvelope, FaPhone, FaHome } from "react-icons/fa";
 
-const SideBar = () => {
+const SideBar = forwardRef((props, forwardref) => {
   const [posts, setPosts] = useState([]);
   const innerRef = useRef(null);
   const requestPost = async () => {
     try {
       const res = await axios.get("http://localhost:4000/side");
       setPosts(res.data);
-      console.log(res.data);
     } catch (err) {
       console.log(err);
       setPosts(data.side);
@@ -55,7 +54,7 @@ const SideBar = () => {
   }, []);
 
   return (
-    <Container theme={theme}>
+    <Container theme={theme} ref={forwardref}>
       <Inner ref={innerRef} theme={theme}>
         <SearchBoxWrapper id="search-box" theme={theme}>
           <Form>
@@ -133,10 +132,11 @@ const SideBar = () => {
       </Inner>
     </Container>
   );
-};
+});
 const Container = styled.div`
   width: 20vw;
   background-color: #f5f6f7;
+  transition: 0.4s;
   @media ${({ theme }) => theme.device.desktopWide} {
     width: 22vw;
   }

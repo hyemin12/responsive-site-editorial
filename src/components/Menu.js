@@ -81,7 +81,7 @@ const NavItem = styled(Link)`
 const SubMenuUl = styled.ul`
   display: none;
   padding: 1em 0;
-  ${({ isVisible }) => isVisible && `display: block;`}
+  ${({ isVisible }) => isVisible && `display: block;`};
 `;
 const SubMenu = styled(NavItem)`
   ${({ theme }) => theme.flexBox.flex("row", "center", "space-between")};
