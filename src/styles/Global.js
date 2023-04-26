@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 0.9em;
     line-height: 1.6;
     @media ${({ theme }) => theme.device.desktopWide}{
-      font-size:1em !important;
+      font-size:1em ;
     };
   }
   a {
