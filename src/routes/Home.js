@@ -72,6 +72,9 @@ const FeatureWrapper = styled.ul`
   ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
   gap: 2em;
   flex-wrap: wrap;
+  @media ${({ theme }) => theme.device.tabletPortrait} {
+    display: block;
+  }
 `;
 
 const PostsWrapper = styled.ul`

@@ -17,12 +17,7 @@ import { FaSearch, FaEnvelope, FaPhone, FaHome } from "react-icons/fa";
 
 const SideBar = () => {
   const [visible, setVisible] = useState(true);
-  const handleMenu = () => {
-    setVisible(!visible);
-  };
-  // useEffect(() => {
-  //   handleMenu();
-  // }, []);
+
   const [posts, setPosts] = useState([]);
   const innerRef = useRef(null);
 
@@ -62,6 +57,11 @@ const SideBar = () => {
     window.addEventListener("scroll", handleSideBar);
     return () => window.removeEventListener("scroll", handleSideBar);
   }, []);
+
+  // 메뉴 보여줌/숨김
+  const handleMenu = () => {
+    setVisible(!visible);
+  };
 
   // tablet 사이즈부터 사이드바 숨기기
   const handleVisible = () => {
@@ -173,10 +173,11 @@ const Container = styled.div`
     }
   }
   @media ${({ theme }) => theme.device.tablet} {
-    width: 24vw;
+    width: 26vw;
     box-shadow: 1em 0 3em rgba(0, 0, 0, 0.1);
+    position: absolute;
     &.hide {
-      margin-left: -24vw;
+      margin-left: -26vw;
     }
   }
 `;
@@ -189,7 +190,7 @@ const Inner = styled.div`
     padding: 2em;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    width: 24vw;
+    width: 26vw;
   }
 `;
 
@@ -207,7 +208,7 @@ const SearchBoxWrapper = styled.div`
     margin-left: -2em;
   }
   @media ${({ theme }) => theme.device.tablet} {
-    width: 24vw;
+    width: 26vw;
     padding: 2em;
     margin-top: -2em;
   }
