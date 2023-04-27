@@ -49,6 +49,9 @@ const Title = styled(H3)`
   @media ${({ theme }) => theme.device.desktopWide} {
     font-size: 4.3em;
   }
+  @media ${({ theme }) => theme.device.tabletPortrait} {
+    font-size: 3.1em;
+  }
 `;
 const SubTitle = styled.h4`
   padding: 1.5em 0;

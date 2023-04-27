@@ -185,6 +185,7 @@ const Inner = styled.div`
   width: 15em;
   padding: 1.25em;
   background-color: #f5f6f7;
+
   @media ${({ theme }) => theme.device.desktopWide} {
     width: 17vw;
     padding: 2em;

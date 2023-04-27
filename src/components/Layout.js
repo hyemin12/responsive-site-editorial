@@ -21,5 +21,8 @@ const Container = styled.div`
 const Main = styled.div`
   padding: 7em 5em;
   position: relative;
+  @media ${({ theme }) => theme.device.tabletPortrait} {
+    padding: 7em 3em;
+  }
 `;
 export default Layout;
