@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -14,7 +14,8 @@ import { data } from "../data";
 
 import { FaSearch, FaEnvelope, FaPhone, FaHome } from "react-icons/fa";
 
-const SideBar = forwardRef((props, forwardref) => {
+const SideBar = ({ visible, setVisible }) => {
+  console.log(visible, setVisible);
   const [posts, setPosts] = useState([]);
   const innerRef = useRef(null);
 
@@ -55,12 +56,20 @@ const SideBar = forwardRef((props, forwardref) => {
     return () => window.removeEventListener("scroll", handleSideBar);
   }, []);
 
+  // tablet : 1280
+  const handleVisible = () => {
+    const documentWidth = document.documentElement.clientWidth;
+    if (documentWidth < 1280) {
+      setVisible(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleVisible);
+    return () => window.removeEventListener("resize", handleVisible);
+  }, []);
+  // className={visible ? "visible" : "unVisible"}
   return (
-    <Container
-      theme={theme}
-      ref={forwardref}
-      className={props.visible ? "visible" : ""}
-    >
+    <Container theme={theme} className={visible ? "visible" : "hide"}>
       <Inner ref={innerRef} theme={theme}>
         <SearchBoxWrapper id="search-box" theme={theme}>
           <Form>
@@ -138,7 +147,7 @@ const SideBar = forwardRef((props, forwardref) => {
       </Inner>
     </Container>
   );
-});
+};
 const Container = styled.div`
   flex-shrink: 0;
   width: 20vw;
@@ -146,6 +155,9 @@ const Container = styled.div`
   transition: 0.4s;
   @media ${({ theme }) => theme.device.desktopWide} {
     width: 22vw;
+  }
+  &.hide {
+    margin-left: -20vw;
   }
   @media ${({ theme }) => theme.device.tablet} {
     box-shadow: 0 3em 0 rgba(0, 0, 0, 0.5);

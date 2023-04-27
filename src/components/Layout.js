@@ -8,21 +8,16 @@ import theme from "../styles/theme";
 import MenuButton from "./elements/MenuButton";
 
 const Layout = ({ children }) => {
-  const sideBarRef = useRef(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const handleMenu = () => {
     setVisible(!visible);
-    const sideBar = sideBarRef.current;
-    sideBar.className.includes("visible")
-      ? (sideBar.style.marginLeft = `${sideBar.clientWidth * -1}px`)
-      : (sideBar.style.marginLeft = 0);
   };
   useEffect(() => {
     handleMenu();
   }, []);
   return (
     <Container theme={theme}>
-      <SideBar ref={sideBarRef} visible={visible} />
+      <SideBar visible={visible} setVisible={setVisible} />
       <Main>
         <MenuButton func={handleMenu} />
         <Header />
