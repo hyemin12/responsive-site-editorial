@@ -12,20 +12,17 @@ const Layout = ({ children }) => {
   const [visible, setVisible] = useState(false);
   const handleMenu = () => {
     setVisible(!visible);
-    if (sideBarRef.current && visible) {
-      sideBarRef.current.style.marginLeft = `${
-        sideBarRef.current.clientWidth * -1
-      }px`;
-    } else {
-      sideBarRef.current.style.marginLeft = 0;
-    }
+    const sideBar = sideBarRef.current;
+    sideBar.className.includes("visible")
+      ? (sideBar.style.marginLeft = `${sideBar.clientWidth * -1}px`)
+      : (sideBar.style.marginLeft = 0);
   };
   useEffect(() => {
     handleMenu();
   }, []);
   return (
     <Container theme={theme}>
-      <SideBar ref={sideBarRef} />
+      <SideBar ref={sideBarRef} visible={visible} />
       <Main>
         <MenuButton func={handleMenu} />
         <Header />
@@ -38,7 +35,6 @@ const Container = styled.div`
   ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
 `;
 const Main = styled.div`
-  // width: 80vw;
   padding: 7em 5em;
   position: relative;
 `;

@@ -17,6 +17,7 @@ import { FaSearch, FaEnvelope, FaPhone, FaHome } from "react-icons/fa";
 const SideBar = forwardRef((props, forwardref) => {
   const [posts, setPosts] = useState([]);
   const innerRef = useRef(null);
+
   const requestPost = async () => {
     try {
       const res = await axios.get("http://localhost:4000/side");
@@ -29,6 +30,7 @@ const SideBar = forwardRef((props, forwardref) => {
   useEffect(() => {
     requestPost();
   }, []);
+
   // 특정 높이가 되면 사이드바 고정시키기
   const handleSideBar = () => {
     if (innerRef.current) {
@@ -54,7 +56,11 @@ const SideBar = forwardRef((props, forwardref) => {
   }, []);
 
   return (
-    <Container theme={theme} ref={forwardref}>
+    <Container
+      theme={theme}
+      ref={forwardref}
+      className={props.visible ? "visible" : ""}
+    >
       <Inner ref={innerRef} theme={theme}>
         <SearchBoxWrapper id="search-box" theme={theme}>
           <Form>
@@ -134,11 +140,15 @@ const SideBar = forwardRef((props, forwardref) => {
   );
 });
 const Container = styled.div`
+  flex-shrink: 0;
   width: 20vw;
   background-color: #f5f6f7;
   transition: 0.4s;
   @media ${({ theme }) => theme.device.desktopWide} {
     width: 22vw;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    box-shadow: 0 3em 0 rgba(0, 0, 0, 0.5);
   }
 `;
 const Inner = styled.div`
