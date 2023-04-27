@@ -25,6 +25,9 @@ const FeatureItem = styled.li`
   @media ${({ theme }) => theme.device.tabletPortrait} {
     width: 100%;
     margin-bottom: 5em;
+    &:last-child {
+      margin-bottom: 2em;
+    }
   }
 `;
 

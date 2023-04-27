@@ -74,6 +74,7 @@ const FeatureWrapper = styled.ul`
   flex-wrap: wrap;
   @media ${({ theme }) => theme.device.tabletPortrait} {
     display: block;
+    padding-top: 2em;
   }
 `;
 

@@ -14,7 +14,7 @@ const Img = ({ type, src, alt, width, height, ratio, path, imgWidth }) => {
     </ImgWrapper>
   );
 };
-const ImgStyle = css`
+export const ImgStyle = css`
   flex-shrink: 0;
   display: block;
   width: ${({ width }) => width};
@@ -30,7 +30,7 @@ const ImgWrapper = styled.div`
 const ImgLink = styled(Link)`
   ${ImgStyle}
 `;
-const Image = styled.img`
+export const Image = styled.img`
   width: ${({ imgWidth }) => (imgWidth ? "auto" : "100%")};
   position: absolute;
   top: 50%;
