@@ -8,14 +8,21 @@ import Menu from "./Menu";
 import Title from "./elements/Title";
 import SidePost from "./SidePost";
 import HyperLink from "./elements/HyperLink";
+import MenuButton from "./elements/MenuButton";
 import Footer from "./Footer";
 
 import { data } from "../data";
 
 import { FaSearch, FaEnvelope, FaPhone, FaHome } from "react-icons/fa";
 
-const SideBar = ({ visible, setVisible }) => {
-  console.log(visible, setVisible);
+const SideBar = () => {
+  const [visible, setVisible] = useState(true);
+  const handleMenu = () => {
+    setVisible(!visible);
+  };
+  // useEffect(() => {
+  //   handleMenu();
+  // }, []);
   const [posts, setPosts] = useState([]);
   const innerRef = useRef(null);
 
@@ -56,10 +63,10 @@ const SideBar = ({ visible, setVisible }) => {
     return () => window.removeEventListener("scroll", handleSideBar);
   }, []);
 
-  // tablet : 1280
+  // tablet 사이즈부터 사이드바 숨기기
   const handleVisible = () => {
     const documentWidth = document.documentElement.clientWidth;
-    if (documentWidth < 1280) {
+    if (documentWidth <= 1280) {
       setVisible(false);
     }
   };
@@ -67,9 +74,10 @@ const SideBar = ({ visible, setVisible }) => {
     window.addEventListener("resize", handleVisible);
     return () => window.removeEventListener("resize", handleVisible);
   }, []);
-  // className={visible ? "visible" : "unVisible"}
+
   return (
     <Container theme={theme} className={visible ? "visible" : "hide"}>
+      <MenuButton func={handleMenu} />
       <Inner ref={innerRef} theme={theme}>
         <SearchBoxWrapper id="search-box" theme={theme}>
           <Form>
@@ -153,14 +161,23 @@ const Container = styled.div`
   width: 20vw;
   background-color: #f5f6f7;
   transition: 0.4s;
-  @media ${({ theme }) => theme.device.desktopWide} {
-    width: 22vw;
-  }
+  position: relative;
+  z-index: 3;
   &.hide {
     margin-left: -20vw;
   }
+  @media ${({ theme }) => theme.device.desktopWide} {
+    width: 22vw;
+    &.hide {
+      margin-left: -22vw;
+    }
+  }
   @media ${({ theme }) => theme.device.tablet} {
-    box-shadow: 0 3em 0 rgba(0, 0, 0, 0.5);
+    width: 24vw;
+    box-shadow: 1em 0 3em rgba(0, 0, 0, 0.1);
+    &.hide {
+      margin-left: -24vw;
+    }
   }
 `;
 const Inner = styled.div`
@@ -170,6 +187,9 @@ const Inner = styled.div`
   @media ${({ theme }) => theme.device.desktopWide} {
     width: 22vw;
     padding: 2em;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 24vw;
   }
 `;
 
@@ -185,6 +205,11 @@ const SearchBoxWrapper = styled.div`
     padding: 2em;
     margin-top: -2em;
     margin-left: -2em;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 24vw;
+    padding: 2em;
+    margin-top: -2em;
   }
 `;
 const Form = styled.form`

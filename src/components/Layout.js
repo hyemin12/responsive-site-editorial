@@ -1,25 +1,14 @@
-import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import theme from "../styles/theme";
 
 import Header from "./Header";
 import SideBar from "./SideBar";
-import theme from "../styles/theme";
-
-import MenuButton from "./elements/MenuButton";
 
 const Layout = ({ children }) => {
-  const [visible, setVisible] = useState(true);
-  const handleMenu = () => {
-    setVisible(!visible);
-  };
-  useEffect(() => {
-    handleMenu();
-  }, []);
   return (
     <Container theme={theme}>
-      <SideBar visible={visible} setVisible={setVisible} />
+      <SideBar />
       <Main>
-        <MenuButton func={handleMenu} />
         <Header />
         <>{children}</>
       </Main>

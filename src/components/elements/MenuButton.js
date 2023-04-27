@@ -13,7 +13,7 @@ const I = styled.i`
   font-size: 2em;
   position: absolute;
   top: 1em;
-  left: 1em;
+  right: -60px;
   cursor: pointer;
 `;
 

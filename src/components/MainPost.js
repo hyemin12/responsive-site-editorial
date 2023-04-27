@@ -40,7 +40,8 @@ const PostItem = styled.li`
   &:nth-child(even) {
     padding-left: 2em;
   }
-  &:nth-last-child(2) {
+  &:nth-last-child(2),
+  &:nth-last-child(1) {
     border-bottom: none;
   }
   &:nth-child(-n + 2) {

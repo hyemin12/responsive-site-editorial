@@ -63,6 +63,7 @@ const Section = styled.section`
   padding: 4em 0;
   border-bottom: 2px solid #ddd;
   &:last-child {
+    padding-bottom: 0;
     border-bottom: none;
   }
 `;
