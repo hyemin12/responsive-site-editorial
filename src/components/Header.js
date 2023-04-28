@@ -76,5 +76,11 @@ const SocialWrapper = styled.div`
   @media ${({ theme }) => theme.device.desktopWide} {
     font-size: 1.4em;
   }
+  @media ${({ theme }) => theme.device.mobile} {
+    font-size: 1.2em;
+    position: absolute;
+    top: 1.5em;
+    right: 2em;
+  }
 `;
 export default Header;

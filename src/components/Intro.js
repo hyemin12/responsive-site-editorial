@@ -43,6 +43,9 @@ const IntroSection = styled.section`
   @media ${({ theme }) => theme.device.desktopWide} {
     padding: 6em 0;
   }
+  @media ${({ theme }) => theme.device.mobile} {
+    flex-direction: column-reverse;
+  }
 `;
 const Title = styled(H3)`
   font-size: 3.3em;
@@ -82,6 +85,10 @@ const ImgWrapper = styled.div`
   overflow: hidden;
   @media ${({ theme }) => theme.device.tabletPortrait} {
     aspect-ratio: 166/304;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 100%;
+    aspect-ratio: 61 / 48;
   }
 `;
 const Img = styled(Image)`

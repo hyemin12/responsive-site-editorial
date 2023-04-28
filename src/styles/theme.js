@@ -3,7 +3,7 @@ const breakPoint = {
   desktop: 1281,
   tablet: 1280,
   tabletPortrait: 980,
-  mobile: 575,
+  mobile: 680,
 };
 
 const device = {
