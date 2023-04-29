@@ -162,7 +162,7 @@ const Container = styled.div`
   background-color: #f5f6f7;
   transition: 0.4s;
   position: relative;
-  z-index: 3;
+  z-index: 5;
   &.hide {
     margin-left: -17em;
   }
@@ -170,8 +170,10 @@ const Container = styled.div`
   }
   @media ${({ theme }) => theme.device.tablet} {
     width: 18em;
+    height: 100%;
     box-shadow: 1em 0 3em rgba(0, 0, 0, 0.1);
-    position: absolute;
+    position: fixed;
+    overflow-y: scroll;
     &.hide {
       margin-left: -18em;
     }
