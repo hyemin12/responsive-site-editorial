@@ -66,6 +66,9 @@ const Section = styled.section`
     padding-bottom: 0;
     border-bottom: none;
   }
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 3em 0;
+  }
 `;
 
 const FeatureWrapper = styled.ul`

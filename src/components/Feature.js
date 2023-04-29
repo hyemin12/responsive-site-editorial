@@ -63,7 +63,7 @@ const FeatureIcon = styled.span`
   @media ${({ theme }) => theme.device.mobile} {
     width: 4em;
     height: 4em;
-    margin-bottom: 2.5em;
+    margin-bottom: 2em;
   }
 `;
 const I = styled.i`

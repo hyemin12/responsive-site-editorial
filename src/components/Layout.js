@@ -23,6 +23,7 @@ const Main = styled.div`
   position: relative;
   @media ${({ theme }) => theme.device.tabletPortrait} {
     padding: 7em 3em;
+    padding-bottom: 0;
   }
 `;
 export default Layout;
