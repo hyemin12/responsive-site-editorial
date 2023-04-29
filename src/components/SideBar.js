@@ -158,19 +158,15 @@ const SideBar = () => {
 };
 const Container = styled.div`
   flex-shrink: 0;
-  width: 15em;
+  width: 17em;
   background-color: #f5f6f7;
   transition: 0.4s;
   position: relative;
   z-index: 3;
   &.hide {
-    margin-left: -15em;
+    margin-left: -17em;
   }
   @media ${({ theme }) => theme.device.desktopWide} {
-    width: 17em;
-    &.hide {
-      margin-left: -17em;
-    }
   }
   @media ${({ theme }) => theme.device.tablet} {
     width: 18em;
@@ -182,12 +178,11 @@ const Container = styled.div`
   }
 `;
 const Inner = styled.div`
-  width: 15em;
+  width: 17em;
   padding: 1.25em;
   background-color: #f5f6f7;
 
   @media ${({ theme }) => theme.device.desktopWide} {
-    width: 17vw;
     padding: 2em;
   }
   @media ${({ theme }) => theme.device.tablet} {
@@ -197,13 +192,12 @@ const Inner = styled.div`
 
 // Search
 const SearchBoxWrapper = styled.div`
-  width: 15em;
+  width: 17em;
   background-color: #eff1f2;
   padding: 1.25em;
   margin-top: -1.25em;
   margin-left: -1.25em;
   @media ${({ theme }) => theme.device.desktopWide} {
-    width: 17em;
     padding: 2em;
     margin-top: -2em;
     margin-left: -2em;

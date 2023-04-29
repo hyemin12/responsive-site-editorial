@@ -29,6 +29,14 @@ const FeatureItem = styled.li`
       margin-bottom: 2em;
     }
   }
+  @media ${({ theme }) => theme.device.mobile} {
+    display: block;
+    width: 100%;
+    margin-bottom: 4em;
+    &:last-child {
+      margin-bottom: 2em;
+    }
+  }
 `;
 
 const FeatureIcon = styled.span`
@@ -52,14 +60,19 @@ const FeatureIcon = styled.span`
     width: 7em;
     height: 7em;
   }
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 4em;
+    height: 4em;
+    margin-bottom: 2.5em;
+  }
 `;
 const I = styled.i`
   color: ${({ theme }) => theme.color.point};
   font-size: 3em;
   position: absolute;
-  // top: 50%;
-  // left: 50%;
-  // transform: translateX(-50%);
+  @media ${({ theme }) => theme.device.mobile} {
+    font-size: 1.6em;
+  }
 `;
 
 const H4 = styled.h4`
