@@ -70,7 +70,9 @@ const SideBar = () => {
       setVisible(false);
     }
   };
+
   useEffect(() => {
+    handleVisible();
     window.addEventListener("resize", handleVisible);
     return () => window.removeEventListener("resize", handleVisible);
   }, []);
