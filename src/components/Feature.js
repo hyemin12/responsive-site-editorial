@@ -18,13 +18,29 @@ const Feature = (props) => {
 };
 
 const FeatureItem = styled.li`
-  ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
+  ${({ theme }) => theme.flexBox.flex()};
   gap: 3em;
   width: calc((100% - 2em) / 2);
   margin-bottom: 2em;
+  @media ${({ theme }) => theme.device.tabletPortrait} {
+    width: 100%;
+    margin-bottom: 5em;
+    &:last-child {
+      margin-bottom: 2em;
+    }
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    display: block;
+    width: 100%;
+    margin-bottom: 4em;
+    &:last-child {
+      margin-bottom: 2em;
+    }
+  }
 `;
 
 const FeatureIcon = styled.span`
+  ${({ theme }) => theme.flexBox.flex("row", "center", "center")};
   flex-shrink: 0;
   width: 6em;
   height: 6em;
@@ -38,20 +54,25 @@ const FeatureIcon = styled.span`
     border-radius: 6px;
     position: absolute;
     top: 50%;
-    transform: translateY(-25%) rotate(45deg);
+    transform: translateY(-55%) rotate(45deg);
   }
   @media ${({ theme }) => theme.device.desktopWide} {
     width: 7em;
     height: 7em;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 4em;
+    height: 4em;
+    margin-bottom: 2em;
   }
 `;
 const I = styled.i`
   color: ${({ theme }) => theme.color.point};
   font-size: 3em;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
+  @media ${({ theme }) => theme.device.mobile} {
+    font-size: 1.6em;
+  }
 `;
 
 const H4 = styled.h4`

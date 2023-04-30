@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -8,15 +8,19 @@ import Menu from "./Menu";
 import Title from "./elements/Title";
 import SidePost from "./SidePost";
 import HyperLink from "./elements/HyperLink";
+import MenuButton from "./elements/MenuButton";
 import Footer from "./Footer";
 
 import { data } from "../data";
 
 import { FaSearch, FaEnvelope, FaPhone, FaHome } from "react-icons/fa";
 
-const SideBar = forwardRef((props, forwardref) => {
+const SideBar = () => {
+  const [visible, setVisible] = useState(true);
+
   const [posts, setPosts] = useState([]);
   const innerRef = useRef(null);
+
   const requestPost = async () => {
     try {
       const res = await axios.get("http://localhost:4000/side");
@@ -29,6 +33,7 @@ const SideBar = forwardRef((props, forwardref) => {
   useEffect(() => {
     requestPost();
   }, []);
+
   // 특정 높이가 되면 사이드바 고정시키기
   const handleSideBar = () => {
     if (innerRef.current) {
@@ -53,8 +58,26 @@ const SideBar = forwardRef((props, forwardref) => {
     return () => window.removeEventListener("scroll", handleSideBar);
   }, []);
 
+  // 메뉴 보여줌/숨김
+  const handleMenu = () => {
+    setVisible(!visible);
+  };
+
+  // tablet 사이즈부터 사이드바 숨기기
+  const handleVisible = () => {
+    const documentWidth = document.documentElement.clientWidth;
+    if (documentWidth <= 1280) {
+      setVisible(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleVisible);
+    return () => window.removeEventListener("resize", handleVisible);
+  }, []);
+
   return (
-    <Container theme={theme} ref={forwardref}>
+    <Container theme={theme} className={visible ? "visible" : "hide"}>
+      <MenuButton func={handleMenu} />
       <Inner ref={innerRef} theme={theme}>
         <SearchBoxWrapper id="search-box" theme={theme}>
           <Form>
@@ -132,37 +155,59 @@ const SideBar = forwardRef((props, forwardref) => {
       </Inner>
     </Container>
   );
-});
+};
 const Container = styled.div`
-  width: 20vw;
+  flex-shrink: 0;
+  width: 17em;
   background-color: #f5f6f7;
   transition: 0.4s;
-  @media ${({ theme }) => theme.device.desktopWide} {
-    width: 22vw;
+  position: relative;
+  z-index: 5;
+  &.hide {
+    margin-left: -17em;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 18em;
+    position: absoulte;
+    &.hide {
+      margin-left: -18.3em;
+    }
   }
 `;
 const Inner = styled.div`
-  width: 20vw;
+  width: 17em;
   padding: 1.25em;
   background-color: #f5f6f7;
+
   @media ${({ theme }) => theme.device.desktopWide} {
-    width: 22vw;
     padding: 2em;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 18em;
+    height: 100%;
+    box-shadow: 1em 0 3em rgba(0, 0, 0, 0.1);
+    position: fixed;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 `;
 
 // Search
 const SearchBoxWrapper = styled.div`
-  width: 20vw;
+  width: 17em;
   background-color: #eff1f2;
   padding: 1.25em;
   margin-top: -1.25em;
   margin-left: -1.25em;
   @media ${({ theme }) => theme.device.desktopWide} {
-    width: 22vw;
     padding: 2em;
     margin-top: -2em;
     margin-left: -2em;
+  }
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 18em;
+    padding: 2em;
+    margin-top: -2em;
   }
 `;
 const Form = styled.form`

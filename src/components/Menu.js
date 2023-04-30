@@ -2,8 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { I } from "./elements/Icon";
-
 import theme from "../styles/theme";
 
 import { FaAngleDown } from "react-icons/fa";
@@ -99,8 +97,13 @@ const SubNavItem = styled(Link)`
   }
 `;
 
-const Icon = styled(I)`
+const Icon = styled.i`
+  color: ${({ theme }) => theme.color.grey};
+  transition: 0.4s;
   ${({ isVisible }) => isVisible && `transform : rotate(-180deg);  `}
+  &:hover {
+    color: ${({ theme }) => theme.color.point};
+  }
 `;
 
 export default Menu;

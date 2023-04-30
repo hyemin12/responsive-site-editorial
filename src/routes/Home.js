@@ -63,7 +63,11 @@ const Section = styled.section`
   padding: 4em 0;
   border-bottom: 2px solid #ddd;
   &:last-child {
+    padding-bottom: 0;
     border-bottom: none;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    padding: 3em 0;
   }
 `;
 
@@ -71,6 +75,10 @@ const FeatureWrapper = styled.ul`
   ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
   gap: 2em;
   flex-wrap: wrap;
+  @media ${({ theme }) => theme.device.tabletPortrait} {
+    display: block;
+    padding-top: 2em;
+  }
 `;
 
 const PostsWrapper = styled.ul`

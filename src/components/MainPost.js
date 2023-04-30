@@ -40,12 +40,14 @@ const PostItem = styled.li`
   &:nth-child(even) {
     padding-left: 2em;
   }
-  &:nth-last-child(2) {
+  &:nth-last-child(2),
+  &:nth-last-child(1) {
     border-bottom: none;
   }
   &:nth-child(-n + 2) {
     padding-top: 0;
   }
+  // desktop Wide ver. (3ea)
   @media ${({ theme }) => theme.device.desktopWide} {
     flex-grow: 1;
     width: calc(33.3% - 2em);
@@ -76,6 +78,19 @@ const PostItem = styled.li`
     &:nth-last-child(2),
     &:nth-last-child(3) {
       border-bottom: none;
+    }
+  }
+  // mobile ver. (1ea)
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 100%;
+    border-right: none !important;
+    border-bottom: 1px solid #ddd !important;
+    padding: 2.5em 0 !important;
+    &:first-child {
+      padding-top: 0 !important;
+    }
+    &:last-child {
+      border-bottom: none !important;
     }
   }
 `;
