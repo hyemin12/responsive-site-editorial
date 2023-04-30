@@ -26,8 +26,8 @@ const I = styled.i`
     padding-bottom: 0.25em;
     font-size: 1.3em;
     color: ${({ theme }) => theme.color.grey};
-    position: fixed;
-    // right: -88px;
+    // position: fixed;
+    right: -88px;
   }
 `;
 

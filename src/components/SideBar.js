@@ -166,16 +166,11 @@ const Container = styled.div`
   &.hide {
     margin-left: -17em;
   }
-  @media ${({ theme }) => theme.device.desktopWide} {
-  }
   @media ${({ theme }) => theme.device.tablet} {
     width: 18em;
-    height: 100%;
-    box-shadow: 1em 0 3em rgba(0, 0, 0, 0.1);
-    position: fixed;
-    overflow-y: scroll;
+    position: absoulte;
     &.hide {
-      margin-left: -18em;
+      margin-left: -18.3em;
     }
   }
 `;
@@ -189,6 +184,11 @@ const Inner = styled.div`
   }
   @media ${({ theme }) => theme.device.tablet} {
     width: 18em;
+    height: 100%;
+    box-shadow: 1em 0 3em rgba(0, 0, 0, 0.1);
+    position: fixed;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 `;
 

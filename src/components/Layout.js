@@ -17,6 +17,9 @@ const Layout = ({ children }) => {
 };
 const Container = styled.div`
   ${({ theme }) => theme.flexBox.flex("row", "start", "start")};
+  @media ${({ theme }) => theme.device.tablet} {
+    display: block;
+  }
 `;
 const Main = styled.div`
   padding: 7em 5em;
