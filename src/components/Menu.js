@@ -10,8 +10,8 @@ const Menu = () => {
   const [visible, setVisible] = useState(false);
 
   const links = [
-    { title: "Homepage", path: "" },
-    { title: "Generic", path: "" },
+    { title: "Homepage", path: "/" },
+    { title: "Generic", path: "/generic" },
     { title: "Etiam Dolore", path: "" },
     { title: "Adipicing", path: "" },
     {

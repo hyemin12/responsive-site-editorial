@@ -5,6 +5,7 @@ import Home from "./routes/Home";
 
 import GlobalStyle from "./styles/Global";
 import theme from "./styles/theme";
+import Post from "./routes/Post";
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
         <GlobalStyle />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />}></Route>
+            <Route path="/:id" element={<Home />}></Route>
+            <Route path="/generic" element={<Post />}></Route>
+            <Route path="/etiam_dolore" element={<Post />}></Route>
             <Route path="/" element={<Home />}></Route>
           </Routes>
         </BrowserRouter>
