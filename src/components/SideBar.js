@@ -168,6 +168,13 @@ const Container = styled.div`
   &.hide {
     margin-left: -17em;
   }
+  @media ${({ theme }) => theme.device.desktopWide} {
+    width: 20em;
+
+    &.hide {
+      margin-left: -20em;
+    }
+  }
   @media ${({ theme }) => theme.device.tablet} {
     width: 18em;
     position: absoulte;
@@ -182,6 +189,7 @@ const Inner = styled.div`
   background-color: #f5f6f7;
 
   @media ${({ theme }) => theme.device.desktopWide} {
+    width: 20em;
     padding: 2em;
   }
   @media ${({ theme }) => theme.device.tablet} {
@@ -202,6 +210,7 @@ const SearchBoxWrapper = styled.div`
   margin-top: -1.25em;
   margin-left: -1.25em;
   @media ${({ theme }) => theme.device.desktopWide} {
+    width: 20em;
     padding: 2em;
     margin-top: -2em;
     margin-left: -2em;
