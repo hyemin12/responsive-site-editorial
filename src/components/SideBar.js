@@ -80,7 +80,7 @@ const SideBar = () => {
   return (
     <Container theme={theme} className={visible ? "visible" : "hide"}>
       <MenuButton func={handleMenu} />
-      <Inner ref={innerRef} theme={theme}>
+      <Inner ref={innerRef} theme={theme} visible={visible}>
         <SearchBoxWrapper id="search-box" theme={theme}>
           <Form>
             <SearchBox
@@ -183,11 +183,11 @@ const Container = styled.div`
     }
   }
 `;
+
 const Inner = styled.div`
   width: 17em;
   padding: 1.25em;
   background-color: #f5f6f7;
-
   @media ${({ theme }) => theme.device.desktopWide} {
     width: 20em;
     padding: 2em;
@@ -200,6 +200,7 @@ const Inner = styled.div`
     overflow-x: hidden;
     overflow-y: scroll;
   }
+  ${({ visible }) => !visible && `display:none;`}
 `;
 
 // Search

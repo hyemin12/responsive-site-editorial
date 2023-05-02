@@ -10,6 +10,7 @@ const Title = ({ text, border, type, padding, size }) => {
 
 export const H3 = styled.h3`
   font-size: ${({ size }) => (size ? size : "1.2em")};
+  text-transform: capitalize;
 
   padding: ${({ padding }) => (padding ? padding : 0)};
   ${({ border, theme }) =>
