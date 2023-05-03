@@ -19,7 +19,7 @@ const Menu = () => {
       path: "",
       submenu: ["lorem dolor", "Ipsum adipicing", "tempus magna"],
     },
-    { title: "Elements", path: "" },
+    { title: "Elements", path: "/elements" },
   ];
   return (
     <ul className="menu">

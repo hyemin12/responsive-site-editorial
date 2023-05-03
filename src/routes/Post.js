@@ -16,7 +16,7 @@ const Post = () => {
   console.log(post);
   const { title, text, img } = post;
   return (
-    <Layout style={{ paddingBottom: "2em" }}>
+    <Layout>
       {post && (
         <>
           <Title text={title} size={"2.7em"} padding={"1.5em 0 1em 0"} />

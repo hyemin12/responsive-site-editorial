@@ -6,6 +6,7 @@ import Home from "./routes/Home";
 import GlobalStyle from "./styles/Global";
 import theme from "./styles/theme";
 import Post from "./routes/Post";
+import Elements from "./routes/Elements";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/:id" element={<Home />}></Route>
             <Route path="/generic" element={<Post />}></Route>
+            <Route path="/elements" element={<Elements />}></Route>
             <Route path="/etiam_dolore" element={<Post />}></Route>
             <Route path="/" element={<Home />}></Route>
           </Routes>
