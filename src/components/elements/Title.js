@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
-const Title = ({ text, border, type, padding, size }) => {
+const Title = ({ text, border, type, marginBottom, padding, size }) => {
   return (
-    <H3 border={border} padding={padding} size={size}>
+    <H3
+      border={border}
+      padding={padding}
+      marginBottom={marginBottom}
+      size={size}
+    >
       {text}
     </H3>
   );
@@ -13,6 +18,8 @@ export const H3 = styled.h3`
   text-transform: capitalize;
 
   padding: ${({ padding }) => (padding ? padding : 0)};
+
+  margin-bottom: ${({ marginBottom }) => marginBottom && marginBottom};
   ${({ border, theme }) =>
     border &&
     `padding-bottom: 0.25em;
