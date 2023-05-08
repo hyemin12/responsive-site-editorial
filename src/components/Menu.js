@@ -12,14 +12,14 @@ const Menu = () => {
   const links = [
     { title: "Homepage", path: "/" },
     { title: "Generic", path: "/generic" },
-    { title: "Etiam Dolore", path: "" },
-    { title: "Adipicing", path: "" },
+    { title: "Elements", path: "/elements" },
     {
       title: "Submenu",
       path: "",
       submenu: ["lorem dolor", "Ipsum adipicing", "tempus magna"],
     },
-    { title: "Elements", path: "/elements" },
+    { title: "Etiam Dolore", path: "" },
+    { title: "Adipicing", path: "" },
   ];
   return (
     <ul className="menu">
@@ -93,6 +93,7 @@ const SubNavItem = styled(LinkStyle)`
   display: block;
   padding: 0.5em 0;
   margin-left: 20px;
+  color: ${({ theme }) => theme.color.default};
   font-size: 0.8em;
   @media ${({ theme }) => theme.device.desktopWide} {
     font-size: 0.9em;

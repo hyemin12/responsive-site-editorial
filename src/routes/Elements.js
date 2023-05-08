@@ -44,15 +44,33 @@ const Elements = () => {
         <Title text={"Elements"} size={"1.6em"} />
         <Row>
           <Li item={2}>
-            <Title text={"Text"} size={"1.2em"} padding={"1em 0"} />
-            <P>
-              This is <b>bold</b> and this is <strong>strong</strong>. This is{" "}
-              <i>italic</i> and this is <em>emphasized</em>. This is
-              <sup> superscript</sup> text and this is <sub>subscript</sub>{" "}
-              text. This is <u> underlined</u> and this is code:
-              <code> for (;;) &#123; ... &#125;</code>. Finally, this is a{" "}
-              <a href="javascript:void(0)">link</a>.
-            </P>
+            <Article border={"bottom"}>
+              <Title text={"Text"} size={"1.2em"} padding={"1em 0"} />
+              <P>
+                This is <b>bold</b> and this is <strong>strong</strong>. This is{" "}
+                <i>italic</i> and this is <em>emphasized</em>. This is
+                <sup> superscript</sup> text and this is <sub>subscript</sub>{" "}
+                text. This is <u> underlined</u> and this is code:
+                <code> for (;;) &#123; ... &#125;</code>. Finally, this is a{" "}
+                <a href="javascript:void(0)">link</a>.
+              </P>
+            </Article>
+
+            <Article border={"bottom"}>
+              <h2 style={{ marginBottom: "1em" }}>Heading Level 2</h2>
+              <h3 style={{ marginBottom: "1em" }}>Heading Level 3</h3>
+              <h4>Heading Level 4</h4>
+            </Article>
+            <Article>
+              <p>
+                Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida
+                odio porttitor sem non mi integer non faucibus ornare mi ut ante
+                amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem
+                accumsan varius montes viverra nibh in adipiscing blandit tempus
+                accumsan.
+              </p>
+              <h4>Lists</h4>
+            </Article>
           </Li>
         </Row>
       </Section>
@@ -66,10 +84,14 @@ const Section = styled.section`
 const Row = styled.ul`
   display: flex;
   gap: 2em;
-  padding-top: 2em;
 `;
 const Li = styled.li`
   width: ${({ item }) => (item ? `calc((100% - 2em) / ${item})` : "100%")};
+`;
+const Article = styled.article`
+  line-height: 2em;
+  padding: 2em 0;
+  ${({ border }) => border && " border-bottom: 1px solid #ccc; "};
 `;
 const P = styled.p`
   font-size: 0.92em;

@@ -30,11 +30,6 @@ const GlobalStyle = createGlobalStyle`
     border:1px solid #ddd;
     font-size:1.1em;
   }
-
-  h1,h2,h3,h4,h5,h6{
-    display:inline-block;
-  }
-
   h4{
     @media ${({ theme }) => theme.device.desktopWide}{
       font-size:1.3em !important;
