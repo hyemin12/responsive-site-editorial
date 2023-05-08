@@ -57,7 +57,9 @@ const Menu = () => {
     </ul>
   );
 };
-
+const LinkStyle = styled(Link)`
+  text-decoration: none;
+`;
 const Li = styled.li`
   padding: 1em 0;
   border-top: 1px solid #ddd;
@@ -66,7 +68,7 @@ const Li = styled.li`
     border: none;
   }
 `;
-const NavItem = styled(Link)`
+const NavItem = styled(LinkStyle)`
   display: block;
   font-size: 0.7em;
   color: ${({ theme }) => theme.color.default};
@@ -87,7 +89,7 @@ const SubMenu = styled(NavItem)`
     color: #f56a6a;
   }
 `;
-const SubNavItem = styled(Link)`
+const SubNavItem = styled(LinkStyle)`
   display: block;
   padding: 0.5em 0;
   margin-left: 20px;
