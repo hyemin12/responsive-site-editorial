@@ -14,6 +14,7 @@ import {
   FaTumblr,
 } from "react-icons/fa";
 import Ul from "../components/elements/Ul";
+import Definition from "../components/elements/Definition";
 
 const Elements = () => {
   const sample = data.sampleContent;
@@ -42,7 +43,7 @@ const Elements = () => {
           text={sample[0].text}
           titleSize={"1.6em"}
         />
-
+        <br />
         <Row>
           {sample.slice(0, 2).map((content) => (
             <Li item={2}>
@@ -54,7 +55,7 @@ const Elements = () => {
             </Li>
           ))}
         </Row>
-
+        <br />
         <Row>
           {sample.slice(0, 3).map((content) => (
             <Li item={3}>
@@ -73,7 +74,7 @@ const Elements = () => {
         <Row>
           <Li item={2}>
             <Article border={"bottom"}>
-              <Title text={"Text"} size={"1.2em"} padding={"1em 0"} />
+              <Title text={"Text"} size={"1.2em"} />
               <P>
                 This is <b>bold</b> and this is <strong>strong</strong>. This is{" "}
                 <i>italic</i> and this is <em>emphasized</em>. This is
@@ -120,6 +121,10 @@ const Elements = () => {
                 </Li>
               </Row>
             </Article>
+            <Article>
+              <h4>Definition</h4>
+              <Definition />
+            </Article>
           </Li>
         </Row>
       </Section>
@@ -141,12 +146,13 @@ const Article = styled.article`
   line-height: 2em;
   padding: 2em 0;
   ${({ border }) => border && " border-bottom: 1px solid #ccc; "};
+  &:first-child {
+    padding-top: 0;
+  }
 `;
 const P = styled.p`
   font-size: 0.92em;
   line-height: 1.6;
 `;
-const marginBottom = css`
-  margin-bottom: 1em;
-`;
+
 export default Elements;

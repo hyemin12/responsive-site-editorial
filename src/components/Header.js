@@ -31,11 +31,10 @@ const Header = () => {
   ];
   return (
     <HeaderStyle theme={theme}>
-      <Link to="/">
-        <Logo theme={theme}>
-          <span>Editorial</span> by HTML5 UP
-        </Logo>
-      </Link>
+      <Logo to="/" theme={theme}>
+        <span>Editorial</span> by HTML5 UP
+      </Logo>
+
       <SocialWrapper className="socials" theme={theme}>
         {socials &&
           socials.map(({ name, icon, path }) => (
@@ -50,12 +49,11 @@ const HeaderStyle = styled.header`
   ${({ theme }) => theme.flexBox.flex("row", "center", "space-between")}
   padding-bottom:1em;
   border-bottom: 4px solid ${({ theme }) => theme.color.point};
-  p {
-  }
 `;
 
-const Logo = styled.h4`
+const Logo = styled(Link)`
   font-weight: 400;
+  text-decoration: none;
   span {
     color: ${({ theme }) => theme.color.default};
     font-weight: 700;

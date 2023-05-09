@@ -14,12 +14,13 @@ const Title = ({ text, border, type, marginBottom, padding, size }) => {
 };
 
 export const H3 = styled.h3`
+  display: inline-block;
+  margin-bottom: ${({ marginBottom }) => marginBottom && marginBottom};
+  padding: ${({ padding }) => (padding ? padding : 0)};
+
   font-size: ${({ size }) => (size ? size : "1.2em")};
   text-transform: capitalize;
 
-  padding: ${({ padding }) => (padding ? padding : 0)};
-
-  margin-bottom: ${({ marginBottom }) => marginBottom && marginBottom};
   ${({ border, theme }) =>
     border &&
     `padding-bottom: 0.25em;
