@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Layout from "../components/Layout";
 import SampleContent from "../components/elements/SampleContent";
 import Title from "../components/elements/Title";
@@ -123,7 +123,17 @@ const Elements = () => {
             </Article>
             <Article>
               <h4>Definition</h4>
-              <Definition />
+              {Array(3)
+                .fill()
+                .map((element, idx) => (
+                  <Definition
+                    key={`items${idx + 1}`}
+                    title={`items${idx + 1}`}
+                    text={
+                      "Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Lorem ipsum dolor."
+                    }
+                  />
+                ))}
             </Article>
           </Li>
         </Row>
