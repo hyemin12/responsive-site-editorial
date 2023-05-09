@@ -159,6 +159,7 @@ const SideBar = () => {
   );
 };
 const Container = styled.div`
+  display: none;
   flex-shrink: 0;
   width: 20em;
   background-color: #f5f6f7;

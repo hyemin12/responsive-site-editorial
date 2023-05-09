@@ -30,6 +30,9 @@ const GlobalStyle = createGlobalStyle`
     border:1px solid #ddd;
     font-size:1.1em;
   }
+  h1,h2,h3,h4{
+    margin-bottom:1em;
+  }
   h4{
     @media ${({ theme }) => theme.device.desktopWide}{
       font-size:1.3em !important;

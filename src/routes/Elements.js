@@ -1,11 +1,38 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Layout from "../components/Layout";
 import SampleContent from "../components/elements/SampleContent";
 import Title from "../components/elements/Title";
 import { data } from "../data";
+import HyperLink from "../components/elements/HyperLink";
+
+import {
+  FaTwitter,
+  FaFacebookF,
+  FaInstagram,
+  FaGithub,
+  FaDribbble,
+  FaTumblr,
+} from "react-icons/fa";
+import Ul from "../components/elements/Ul";
 
 const Elements = () => {
   const sample = data.sampleContent;
+  const lists = [
+    "Dolor etiam magna etiam.",
+    "Sagittis lorem eleifend.",
+    "Felis dolore viverra.",
+    "Dolor etiam magna etiam.",
+    "Sagittis lorem eleifend.",
+    "Felis dolore viverra.",
+  ];
+  const icons = [
+    <FaTwitter />,
+    <FaFacebookF />,
+    <FaInstagram />,
+    <FaGithub />,
+    <FaDribbble />,
+    <FaTumblr />,
+  ];
   return (
     <Layout>
       <Title text={"Elements"} size={"3.2em"} padding={"1.5em 0 0 0"} />
@@ -40,6 +67,7 @@ const Elements = () => {
           ))}
         </Row>
       </Section>
+
       <Section>
         <Title text={"Elements"} size={"1.6em"} />
         <Row>
@@ -57,8 +85,8 @@ const Elements = () => {
             </Article>
 
             <Article border={"bottom"}>
-              <h2 style={{ marginBottom: "1em" }}>Heading Level 2</h2>
-              <h3 style={{ marginBottom: "1em" }}>Heading Level 3</h3>
+              <h2>Heading Level 2</h2>
+              <h3>Heading Level 3</h3>
               <h4>Heading Level 4</h4>
             </Article>
             <Article>
@@ -69,7 +97,28 @@ const Elements = () => {
                 accumsan varius montes viverra nibh in adipiscing blandit tempus
                 accumsan.
               </p>
-              <h4>Lists</h4>
+              <br />
+              <h3>Lists</h3>
+              <Row>
+                <Li item={2}>
+                  <h4>Unordered</h4>
+                  <Ul type={"unordered"} lists={lists.slice(0, 3)} />
+
+                  <h4>Alternate</h4>
+                  <Ul type={"alternate"} lists={lists.slice(0, 3)} />
+                </Li>
+
+                <Li item={2}>
+                  <h4>Ordered</h4>
+                  <Ul type={"ordered"} lists={lists} />
+                  <h4>Icons</h4>
+                  <Row>
+                    {icons.map((icon, idx) => (
+                      <HyperLink key={idx} text={icon} size={"1.2em"} />
+                    ))}
+                  </Row>
+                </Li>
+              </Row>
             </Article>
           </Li>
         </Row>
@@ -96,5 +145,8 @@ const Article = styled.article`
 const P = styled.p`
   font-size: 0.92em;
   line-height: 1.6;
+`;
+const marginBottom = css`
+  margin-bottom: 1em;
 `;
 export default Elements;
