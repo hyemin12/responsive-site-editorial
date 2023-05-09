@@ -15,6 +15,8 @@ import {
 } from "react-icons/fa";
 import Ul from "../components/elements/Ul";
 import Definition from "../components/elements/Definition";
+import DefaultBtn from "../components/elements/Buttons/DefaultBtn";
+import PrimaryBtn from "../components/elements/Buttons/PrimaryBtn";
 
 const Elements = () => {
   const sample = data.sampleContent;
@@ -135,6 +137,44 @@ const Elements = () => {
                   />
                 ))}
             </Article>
+            <Article>
+              <h4>Actions</h4>
+              3.5em
+              <Row>
+                <button className="primary">default</button>
+                <button>default</button>
+              </Row>
+              <Row>
+                <button className="primary small">small</button>
+                <button className="small">small</button>
+              </Row>
+            </Article>
+          </Li>
+          <Li item={2}>
+            <h4>Buttons</h4>
+
+            <Row>
+              <PrimaryBtn text={"Primary"} />
+              <DefaultBtn text={"default"} />
+            </Row>
+            <Row>
+              <DefaultBtn size={"large"} text={"large"} />
+              <DefaultBtn text={"default"} />
+              <DefaultBtn size={"small"} text={"small"} />
+            </Row>
+            <Row>
+              <PrimaryBtn size={"large"} text={"large"} />
+              <PrimaryBtn text={"default"} />
+              <PrimaryBtn size={"small"} text={"small"} />
+            </Row>
+            <Row>
+              <button className="primary fit">fit</button>
+              <button className="fit">fit</button>
+            </Row>
+            <Row>
+              <button className="primary fit small">fit + small</button>
+              <button className="fit small">fit + small</button>
+            </Row>
           </Li>
         </Row>
       </Section>
@@ -154,7 +194,7 @@ const Li = styled.li`
 `;
 const Article = styled.article`
   line-height: 2em;
-  padding: 2em 0;
+  padding-top: 2em;
   ${({ border }) => border && " border-bottom: 1px solid #ccc; "};
   &:first-child {
     padding-top: 0;

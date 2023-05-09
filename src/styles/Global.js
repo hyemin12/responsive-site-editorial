@@ -74,29 +74,23 @@ const GlobalStyle = createGlobalStyle`
       border-color: #f56a6a;
     }
   }
-  // i{
-  //   color:${({ theme }) => theme.color.point};
-  //   font-size:1.2em;
-  // }
   li{
     list-style:none;
   }
   button{
-    background-color:transparent;
-    padding:1em 2em;
-    border: 3px solid  #f56a6a;
     border-radius:6px;
     font-family: 'Roboto Slab', serif;
-    color:#f56a6a;
     font-size:0.7em;
     font-weight:700;
     letter-spacing:0.1em;
     text-transform:uppercase;
-    transition:0.4s;
+    transition:all 0.4s;
     cursor:pointer;
-    &:hover{
-      background-color: rgba(245,106,106,0.05);
-    }
+  }
+
+  button.small{
+    padding: 0.75em 2em;
+    font-size:0.5em;
   }
 `;
 export default GlobalStyle;
