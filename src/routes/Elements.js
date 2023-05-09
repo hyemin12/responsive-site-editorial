@@ -6,6 +6,7 @@ import { data } from "../data";
 import HyperLink from "../components/elements/HyperLink";
 
 import {
+  FaSearch,
   FaTwitter,
   FaFacebookF,
   FaInstagram,
@@ -17,6 +18,7 @@ import Ul from "../components/elements/Ul";
 import Definition from "../components/elements/Definition";
 import DefaultBtn from "../components/elements/Buttons/DefaultBtn";
 import PrimaryBtn from "../components/elements/Buttons/PrimaryBtn";
+import IconBtn from "../components/elements/Buttons/IconBtn";
 
 const Elements = () => {
   const sample = data.sampleContent;
@@ -174,6 +176,14 @@ const Elements = () => {
             <Row>
               <PrimaryBtn size={"small"} type={"fit"} text={"fit+small"} />
               <DefaultBtn size={"small"} type={"fit"} text={"fit+small"} />
+            </Row>
+            <Row>
+              <IconBtn type={"primary"} icon={<FaSearch />} text={"icon"} />
+              <IconBtn icon={<FaSearch />} text={"icon"} />
+            </Row>
+            <Row>
+              <PrimaryBtn type={"disabled"} text={"primary"} />
+              <DefaultBtn type={"disabled"} text={"default"} />
             </Row>
           </Li>
         </Row>
