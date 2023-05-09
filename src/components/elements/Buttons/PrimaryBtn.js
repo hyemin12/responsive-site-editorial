@@ -1,18 +1,20 @@
 import styled from "styled-components";
 import theme from "../../../styles/theme";
 
-const PrimaryBtn = ({ size, text }) => {
+const PrimaryBtn = ({ type, size, text }) => {
   return (
-    <Button size={size} theme={theme}>
+    <Button type={type} size={size} theme={theme}>
       {text}
     </Button>
   );
 };
 const Button = styled.button`
   background-color: ${({ theme }) => theme.color.point};
-  padding: 1em 2em;
   border: 3px solid #f56a6a;
   color: #fff;
+  ${({ size }) => size === "large" && `font-size: 0.9em;`};
+  ${({ size }) => size === "small" && `font-size: 0.5em;`};
+  ${({ type }) => type === "fit" && `width:100%`};
   &:hover {
     opacity: 0.9;
   }

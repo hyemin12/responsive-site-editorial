@@ -78,7 +78,9 @@ const GlobalStyle = createGlobalStyle`
     list-style:none;
   }
   button{
+    height:4em;
     border-radius:6px;
+    padding: 1em 2em;
     font-family: 'Roboto Slab', serif;
     font-size:0.7em;
     font-weight:700;
@@ -86,11 +88,6 @@ const GlobalStyle = createGlobalStyle`
     text-transform:uppercase;
     transition:all 0.4s;
     cursor:pointer;
-  }
-
-  button.small{
-    padding: 0.75em 2em;
-    font-size:0.5em;
   }
 `;
 export default GlobalStyle;

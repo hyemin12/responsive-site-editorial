@@ -151,7 +151,7 @@ const Elements = () => {
             </Article>
           </Li>
           <Li item={2}>
-            <h4>Buttons</h4>
+            <h3>Buttons</h3>
 
             <Row>
               <PrimaryBtn text={"Primary"} />
@@ -168,12 +168,12 @@ const Elements = () => {
               <PrimaryBtn size={"small"} text={"small"} />
             </Row>
             <Row>
-              <button className="primary fit">fit</button>
-              <button className="fit">fit</button>
+              <PrimaryBtn type={"fit"} text={"fit"} />
+              <DefaultBtn type={"fit"} text={"fit"} />
             </Row>
             <Row>
-              <button className="primary fit small">fit + small</button>
-              <button className="fit small">fit + small</button>
+              <PrimaryBtn size={"small"} type={"fit"} text={"fit+small"} />
+              <DefaultBtn size={"small"} type={"fit"} text={"fit+small"} />
             </Row>
           </Li>
         </Row>
