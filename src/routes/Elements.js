@@ -141,7 +141,6 @@ const Elements = () => {
             </Article>
             <Article>
               <h4>Actions</h4>
-              3.5em
               <Row>
                 <button className="primary">default</button>
                 <button>default</button>
@@ -154,37 +153,47 @@ const Elements = () => {
           </Li>
           <Li item={2}>
             <h3>Buttons</h3>
-
-            <Row>
+            <BtnRow>
               <PrimaryBtn text={"Primary"} />
               <DefaultBtn text={"default"} />
-            </Row>
-            <Row>
+            </BtnRow>
+            <BtnRow>
               <DefaultBtn size={"large"} text={"large"} />
               <DefaultBtn text={"default"} />
               <DefaultBtn size={"small"} text={"small"} />
-            </Row>
-            <Row>
+            </BtnRow>
+            <BtnRow>
               <PrimaryBtn size={"large"} text={"large"} />
               <PrimaryBtn text={"default"} />
               <PrimaryBtn size={"small"} text={"small"} />
-            </Row>
-            <Row>
+            </BtnRow>
+            <BtnRow>
               <PrimaryBtn type={"fit"} text={"fit"} />
               <DefaultBtn type={"fit"} text={"fit"} />
-            </Row>
-            <Row>
+            </BtnRow>
+            <BtnRow>
               <PrimaryBtn size={"small"} type={"fit"} text={"fit+small"} />
               <DefaultBtn size={"small"} type={"fit"} text={"fit+small"} />
-            </Row>
-            <Row>
+            </BtnRow>
+            <BtnRow>
               <IconBtn type={"primary"} icon={<FaSearch />} text={"icon"} />
               <IconBtn icon={<FaSearch />} text={"icon"} />
-            </Row>
-            <Row>
+            </BtnRow>
+            <BtnRow>
               <PrimaryBtn type={"disabled"} text={"primary"} />
               <DefaultBtn type={"disabled"} text={"default"} />
-            </Row>
+            </BtnRow>
+            <h3>Form</h3>
+            <BtnRow>
+              <input style={{ width: "100%" }} placeholder="Name" />
+              <input style={{ width: "100%" }} placeholder="Email" />
+            </BtnRow>
+            <select style={{ width: "100%" }}>
+              <option value="">- Category -</option>
+              <option value="option1">option1</option>
+              <option value="option2">option2</option>
+              <option value="option3">option3</option>
+            </select>
           </Li>
         </Row>
       </Section>
@@ -198,6 +207,10 @@ const Section = styled.section`
 const Row = styled.ul`
   display: flex;
   gap: 2em;
+`;
+const BtnRow = styled(Row)`
+  gap: 1em;
+  margin-bottom: 1em;
 `;
 const Li = styled.li`
   width: ${({ item }) => (item ? `calc((100% - 2em) / ${item})` : "100%")};

@@ -59,13 +59,13 @@ const GlobalStyle = createGlobalStyle`
   a {
     color: ${theme.color.point};
     text-decoration:underline dotted ${theme.color.point};
-
     transition:0.4s;
     &:hover{
       color: #f56a6a !important
     }
   }
-  input {
+  input, select {
+    display:block;
     border: 1px solid rgba(210,215,217,0.75);   
     border-radius: 5px;
     padding:1em;
@@ -73,6 +73,23 @@ const GlobalStyle = createGlobalStyle`
       outline: 2px solid  #f56a6a;
       border-color: #f56a6a;
     }
+  };
+  select{
+    padding-right: 2.75em;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(210, 215, 217, 0.75)' /%3E%3C/svg%3E");
+    background-size:1.25em;
+    background-repeat:no-repeat;
+    background-position: calc(100% - 1em) center;
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    &:focus {
+      outline: 2px solid  #f56a6a;
+      border-color: #f56a6a;
+    }
+  }
+  select::-ms-expand {
+    display: none;
   }
   li{
     list-style:none;
