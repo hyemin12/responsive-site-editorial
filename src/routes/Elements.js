@@ -19,6 +19,7 @@ import Definition from "../components/elements/Definition";
 import DefaultBtn from "../components/elements/Buttons/DefaultBtn";
 import PrimaryBtn from "../components/elements/Buttons/PrimaryBtn";
 import IconBtn from "../components/elements/Buttons/IconBtn";
+import Select from "../components/elements/Select";
 
 const Elements = () => {
   const sample = data.sampleContent;
@@ -188,12 +189,12 @@ const Elements = () => {
               <input style={{ width: "100%" }} placeholder="Name" />
               <input style={{ width: "100%" }} placeholder="Email" />
             </BtnRow>
-            <select style={{ width: "100%" }}>
+            <Select>
               <option value="">- Category -</option>
               <option value="option1">option1</option>
               <option value="option2">option2</option>
               <option value="option3">option3</option>
-            </select>
+            </Select>
           </Li>
         </Row>
       </Section>
