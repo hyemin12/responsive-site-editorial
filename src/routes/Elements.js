@@ -20,6 +20,7 @@ import DefaultBtn from "../components/elements/Buttons/DefaultBtn";
 import PrimaryBtn from "../components/elements/Buttons/PrimaryBtn";
 import IconBtn from "../components/elements/Buttons/IconBtn";
 import Select from "../components/elements/Select";
+import InputRadio from "../components/elements/InputRadio";
 
 const Elements = () => {
   const sample = data.sampleContent;
@@ -195,6 +196,17 @@ const Elements = () => {
               <option value="option2">option2</option>
               <option value="option3">option3</option>
             </Select>
+            <Row>
+              <Li item={3}>
+                <InputRadio id={"low"} />
+              </Li>
+              <Li item={3}>
+                <InputRadio id={"normal"} />
+              </Li>
+              <Li item={3}>
+                <InputRadio id={"high"} />
+              </Li>
+            </Row>
           </Li>
         </Row>
       </Section>

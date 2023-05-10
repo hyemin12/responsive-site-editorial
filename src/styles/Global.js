@@ -64,7 +64,7 @@ const GlobalStyle = createGlobalStyle`
       color: #f56a6a !important
     }
   };
-  // 127, 136, 143)
+
   input, select {
     display:block;
     border: 1px solid rgba(210,215,217,0.75);   
