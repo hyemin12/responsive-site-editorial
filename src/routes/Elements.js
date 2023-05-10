@@ -197,15 +197,11 @@ const Elements = () => {
               <option value="option3">option3</option>
             </Select>
             <Row>
-              <Li item={3}>
-                <InputRadio id={"low"} />
-              </Li>
-              <Li item={3}>
-                <InputRadio id={"normal"} />
-              </Li>
-              <Li item={3}>
-                <InputRadio id={"high"} />
-              </Li>
+              <InputRadio id={"low"} />
+
+              <InputRadio id={"normal"} />
+
+              <InputRadio id={"high"} />
             </Row>
           </Li>
         </Row>

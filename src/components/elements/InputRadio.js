@@ -3,22 +3,23 @@ import styled, { css } from "styled-components";
 
 import theme from "../../styles/theme";
 
-import { FaCheck, FaSearch } from "react-icons/fa";
-
 const InputRadio = ({ id }) => {
+  console.log(id);
   return (
-    <Container>
-      <Input
-        type="radio"
-        id={`radio-${id}`}
-        value={`radio-${id}`}
-        theme={theme}
-      />
-      <Label for={`radio-${id}`}>{id}</Label>
-    </Container>
+    <>
+      <Label>
+        <Input
+          type="radio"
+          id={`radio-${id}`}
+          name={`radio-${id}`}
+          theme={theme}
+        />
+        <Span htmlFor={`radio-${id}`}>{id}</Span>
+      </Label>
+    </>
   );
 };
-const Container = styled.div`
+const Label = styled.label`
   ${({ theme }) => theme.flexBox.flex()}
   gap:6px;
   color: ${({ theme }) => theme.color.grey};
@@ -30,24 +31,30 @@ const Input = styled.input`
   border-radius: 50%;
   vertical-align: middle;
   appearance: none;
-  position: relative;
-  &:checked + label::before {
-    content: ${(<FaCheck />)};
-    width: 28px;
-    height: 28px;
+
+  &:checked {
     background-color: ${({ theme }) => theme.color.default};
     border-color: ${({ theme }) => theme.color.default};
-    color: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position: relative;
+    &::before {
+      content: "";
+      width: 29px;
+      height: 29px;
+      background-image: url("data:image/svg+xml,%3Csvg stroke='%23fff' fill='%23fff' stroke-width='0' viewBox='0 0 512 512' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      color: #fff;
+      position: absolute;
+      top: 77%;
+      left: 77%;
+      transform: translate(-50%, -50%);
+    }
   }
   &:focus {
     border: 1px solid ${({ theme }) => theme.color.point};
   }
 `;
 
-const Label = styled.label`
+const Span = styled.span`
   text-transform: capitalize;
 `;
 export default InputRadio;
