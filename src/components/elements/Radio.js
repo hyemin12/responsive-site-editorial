@@ -20,7 +20,7 @@ const Radio = ({ id, name, check }) => {
 };
 const Label = styled.label`
   ${({ theme }) => theme.flexBox.flex()}
-  gap:6px;
+  gap:10px;
   color: ${({ theme }) => theme.color.grey};
   cursor: pointer;
 `;

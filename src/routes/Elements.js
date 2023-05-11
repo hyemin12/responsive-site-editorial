@@ -24,6 +24,7 @@ import IconBtn from "../components/elements/Buttons/IconBtn";
 import Select from "../components/elements/Select";
 import Radio from "../components/elements/Radio";
 import Checkbox from "../components/elements/Checkbox";
+import Textarea from "../components/elements/Textarea";
 
 const Elements = () => {
   const sample = data.sampleContent;
@@ -220,6 +221,9 @@ const Elements = () => {
                 <Checkbox id={"I am a human"} check={"checked"} />
               </Li>
             </BtnRow>
+            <TextareaWrapper>
+              <Textarea placeholder={"Enter yout message"} rows={6} />
+            </TextareaWrapper>
           </Li>
         </Row>
       </Section>
@@ -253,6 +257,12 @@ const Article = styled.article`
 const P = styled.p`
   font-size: 0.92em;
   line-height: 1.6;
+`;
+
+const TextareaWrapper = styled.div`
+  form {
+    width: 100%;
+  }
 `;
 
 export default Elements;

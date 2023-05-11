@@ -65,11 +65,12 @@ const GlobalStyle = createGlobalStyle`
     }
   };
 
-  input, select {
+  input, select ,textarea {
     display:block;
     border: 1px solid rgba(210,215,217,0.75);   
     border-radius: 5px;
     padding:1em;
+    font-family: "Open Sans", sans-serif;
     &:focus {
       outline: 2px solid  #f56a6a;
       border-color: #f56a6a;
