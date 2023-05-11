@@ -25,6 +25,7 @@ import Select from "../components/elements/Select";
 import Radio from "../components/elements/Radio";
 import Checkbox from "../components/elements/Checkbox";
 import Textarea from "../components/elements/Textarea";
+import Img from "../components/elements/Img";
 
 const Elements = () => {
   const sample = data.sampleContent;
@@ -44,6 +45,25 @@ const Elements = () => {
     <FaDribbble />,
     <FaTumblr />,
   ];
+  const imgList = [
+    "https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "https://plus.unsplash.com/premium_photo-1668013649592-a3fe7d578c36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1181&q=80",
+  ];
+  const imgItem = imgList[2];
+  let imgList2 = [...imgList].slice(0, 2);
+  imgList2.unshift(imgList[2]);
+  let imgList3 = [...imgList];
+  imgList3.splice(1, 0);
+  // imgList3.unshift();
+  console.log(imgList, imgList2, imgList3);
+
+  const handleImgPosition = (addItem, sliceStart) => {
+    if (!addItem || !sliceStart) return;
+    let newImgList = imgList.slice(sliceStart, 2);
+    return newImgList.unshift(imgList[addItem]);
+  };
+
   return (
     <Layout>
       <Title text={"Elements"} size={"3.2em"} padding={"1.5em 0 0 0"} />
@@ -224,6 +244,51 @@ const Elements = () => {
             <TextareaWrapper>
               <Textarea placeholder={"Enter yout message"} rows={6} />
             </TextareaWrapper>
+            <br />
+            <h3>Image</h3>
+            <h4>Fit</h4>
+            <Img
+              src="https://plus.unsplash.com/premium_photo-1669316982093-b2ed20cc82ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1197&q=80"
+              alt="sample image"
+              width={"100%"}
+              height={"18em"}
+            />
+            <br />
+            <ImgRow>
+              {imgList.map((img) => (
+                <Li item={3}>
+                  <Img
+                    src={img}
+                    alt="sample image"
+                    width={"100%"}
+                    height={"8em"}
+                  />
+                </Li>
+              ))}
+
+              {imgList2 &&
+                imgList2.map((img) => (
+                  <Li item={3}>
+                    <Img
+                      src={img}
+                      alt="sample image"
+                      width={"100%"}
+                      height={"8em"}
+                    />
+                  </Li>
+                ))}
+
+              {imgList.reverse().map((img) => (
+                <Li item={3}>
+                  <Img
+                    src={img}
+                    alt="sample image"
+                    width={"100%"}
+                    height={"8em"}
+                  />
+                </Li>
+              ))}
+            </ImgRow>
           </Li>
         </Row>
       </Section>
@@ -241,6 +306,10 @@ const Row = styled.ul`
 const BtnRow = styled(Row)`
   gap: 1em;
   margin-bottom: 1em;
+`;
+const ImgRow = styled(Row)`
+  gap: 1em;
+  flex-wrap: wrap;
 `;
 const Li = styled.li`
   width: ${({ item }) => (item ? `calc((100% - 2em) / ${item})` : "100%")};

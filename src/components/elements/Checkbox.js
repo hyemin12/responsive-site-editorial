@@ -10,7 +10,7 @@ const Checkbox = ({ check, id }) => {
           id={`checkbox-${id}`}
           name={id}
           theme={theme}
-          checked={check && "checked"}
+          defaultChecked={check && "checked"}
         />
         <Span htmlFor={`checkbox-${id}`}>{id}</Span>
       </Label>

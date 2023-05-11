@@ -11,7 +11,7 @@ const Radio = ({ id, name, check }) => {
           id={`radio-${id}`}
           name={name}
           theme={theme}
-          checked={check && "checked"}
+          defaultChecked={check && "checked"}
         />
         <Span htmlFor={`radio-${id}`}>{id}</Span>
       </Label>
