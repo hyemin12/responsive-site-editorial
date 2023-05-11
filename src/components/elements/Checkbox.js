@@ -1,20 +1,18 @@
-import { useState } from "react";
-import styled, { css } from "styled-components";
-
+import styled from "styled-components";
 import theme from "../../styles/theme";
 
-const InputRadio = ({ id }) => {
-  console.log(id);
+const Checkbox = ({ check, id }) => {
   return (
     <>
       <Label>
         <Input
-          type="radio"
-          id={`radio-${id}`}
-          name={`radio-${id}`}
+          type="checkbox"
+          id={`checkbox-${id}`}
+          name={id}
           theme={theme}
+          checked={check && "checked"}
         />
-        <Span htmlFor={`radio-${id}`}>{id}</Span>
+        <Span htmlFor={`checkbox-${id}`}>{id}</Span>
       </Label>
     </>
   );
@@ -28,10 +26,9 @@ const Label = styled.label`
 const Input = styled.input`
   background-color: #fff;
   border: 1px solid rgba(210, 215, 217, 0.75);
-  border-radius: 50%;
+  border-radius: 6px;
   vertical-align: middle;
   appearance: none;
-
   &:checked {
     background-color: ${({ theme }) => theme.color.default};
     border-color: ${({ theme }) => theme.color.default};
@@ -46,15 +43,10 @@ const Input = styled.input`
       position: absolute;
       top: 77%;
       left: 77%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);&:focus {
+        border: 1px solid ${({ theme }) => theme.color.point};
+      }
     }
-  }
-  &:focus {
-    border: 1px solid ${({ theme }) => theme.color.point};
-  }
 `;
-
-const Span = styled.span`
-  text-transform: capitalize;
-`;
-export default InputRadio;
+const Span = styled.span``;
+export default Checkbox;

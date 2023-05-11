@@ -14,13 +14,16 @@ import {
   FaDribbble,
   FaTumblr,
 } from "react-icons/fa";
+
 import Ul from "../components/elements/Ul";
 import Definition from "../components/elements/Definition";
 import DefaultBtn from "../components/elements/Buttons/DefaultBtn";
 import PrimaryBtn from "../components/elements/Buttons/PrimaryBtn";
 import IconBtn from "../components/elements/Buttons/IconBtn";
+
 import Select from "../components/elements/Select";
-import InputRadio from "../components/elements/InputRadio";
+import Radio from "../components/elements/Radio";
+import Checkbox from "../components/elements/Checkbox";
 
 const Elements = () => {
   const sample = data.sampleContent;
@@ -190,19 +193,33 @@ const Elements = () => {
               <input style={{ width: "100%" }} placeholder="Name" />
               <input style={{ width: "100%" }} placeholder="Email" />
             </BtnRow>
-            <Select>
-              <option value="">- Category -</option>
-              <option value="option1">option1</option>
-              <option value="option2">option2</option>
-              <option value="option3">option3</option>
-            </Select>
-            <Row>
-              <InputRadio id={"low"} />
-
-              <InputRadio id={"normal"} />
-
-              <InputRadio id={"high"} />
-            </Row>
+            <BtnRow>
+              <Select>
+                <option value="">- Category -</option>
+                <option value="option1">option1</option>
+                <option value="option2">option2</option>
+                <option value="option3">option3</option>
+              </Select>
+            </BtnRow>
+            <BtnRow>
+              <Li item={3}>
+                <Radio id={"low"} name={"sample-radio"} check={"checked"} />
+              </Li>
+              <Li item={3}>
+                <Radio id={"normal"} name={"sample-radio"} />
+              </Li>
+              <Li item={3}>
+                <Radio id={"high"} name={"sample-radio"} />
+              </Li>
+            </BtnRow>
+            <BtnRow>
+              <Li item={2}>
+                <Checkbox id={"Email me a copy"} />
+              </Li>
+              <Li item={2}>
+                <Checkbox id={"I am a human"} check={"checked"} />
+              </Li>
+            </BtnRow>
           </Li>
         </Row>
       </Section>
@@ -230,6 +247,7 @@ const Article = styled.article`
   ${({ border }) => border && " border-bottom: 1px solid #ccc; "};
   &:first-child {
     padding-top: 0;
+    padding-bottom 2em;
   }
 `;
 const P = styled.p`
