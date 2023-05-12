@@ -158,14 +158,41 @@ const Elements = () => {
             </Article>
             <Article>
               <h4>Actions</h4>
-              <Row>
-                <button className="primary">default</button>
-                <button>default</button>
-              </Row>
-              <Row>
-                <button className="primary small">small</button>
-                <button className="small">small</button>
-              </Row>
+              <BtnRow>
+                <PrimaryBtn text={"default"} />
+                <DefaultBtn text={"default"} />
+              </BtnRow>
+              <BtnRow>
+                <PrimaryBtn size={"small"} text={"small"} />
+                <DefaultBtn size={"small"} text={"small"} />
+              </BtnRow>
+
+              <BtnRow>
+                <Li item={2}>
+                  <PrimaryBtn text={"default"} />
+                </Li>
+                <Li item={2}>
+                  <PrimaryBtn size={"small"} text={"small"} />
+                </Li>
+              </BtnRow>
+              <BtnRow>
+                <Li item={2}>
+                  <DefaultBtn text={"default"} />
+                </Li>
+                <Li item={2}>
+                  <DefaultBtn size={"small"} text={"small"} />
+                </Li>
+              </BtnRow>
+              <BtnRow>
+                <PrimaryBtn type={"fit"} text={"default"} />
+                <PrimaryBtn size={"small"} type={"fit"} text={"small"} />
+              </BtnRow>
+              <BtnRow>
+                <DefaultBtn type={"fit"} text={"default"} />
+                <DefaultBtn size={"small"} type={"fit"} text={"small"} />
+              </BtnRow>
+              <h3>Pagination</h3>
+              <h3>Blockquote</h3>
             </Article>
           </Li>
           <Li item={2}>
@@ -280,6 +307,36 @@ const Elements = () => {
                 </Li>
               ))}
             </ImgRow>
+            <p>
+              Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis
+              sagittis eget. tempus euismod. Vestibulum ante ipsum primis in
+              faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
+              ac adipiscing accumsan eu faucibus. Integer ac pellentesque
+              praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum
+              ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante
+              ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis
+              iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac
+              pellentesque praesent.
+            </p>
+            <p>
+              <span>
+                <Img
+                  src="https://plus.unsplash.com/premium_photo-1669316982093-b2ed20cc82ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1197&q=80"
+                  width={"40%"}
+                  height={"auto"}
+                  ratio={"60/37"}
+                />
+              </span>
+              Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis
+              sagittis eget. tempus euismod. Vestibulum ante ipsum primis in
+              faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
+              ac adipiscing accumsan eu faucibus. Integer ac pellentesque
+              praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum
+              ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante
+              ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis
+              iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac
+              pellentesque praesent.
+            </p>
           </Li>
         </Row>
       </Section>
