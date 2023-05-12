@@ -8,12 +8,24 @@ import { useState } from "react";
 
 const Textarea = ({ placeholder, name, rows }) => {
   const [state, setState] = useState();
+
   const onChange = (e) => {
     setState(e.target.value);
   };
-  console.log(state);
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (state === "" || !state) return alert("내용을 입력하세요!");
+    alert("전송되었습니다!");
+    setState("");
+  };
+
+  const onReset = () => {
+    setState("");
+  };
+
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <TextareaStyle
         placeholder={placeholder}
         rows={rows && rows}
@@ -23,8 +35,8 @@ const Textarea = ({ placeholder, name, rows }) => {
         {state}
       </TextareaStyle>
       <Row theme={theme}>
-        <PrimaryBtn text={"Send message"} />
-        <DefaultBtn text={"reset"} />
+        <PrimaryBtn type="submit" text={"Send message"} />
+        <DefaultBtn type="reset" text={"reset"} onClick={onReset} />
       </Row>
     </form>
   );

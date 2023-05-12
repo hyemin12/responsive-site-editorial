@@ -50,19 +50,10 @@ const Elements = () => {
     "https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     "https://plus.unsplash.com/premium_photo-1668013649592-a3fe7d578c36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1181&q=80",
   ];
-  const imgItem = imgList[2];
-  let imgList2 = [...imgList].slice(0, 2);
+  const imgList2 = [...imgList].slice(0, 2);
   imgList2.unshift(imgList[2]);
-  let imgList3 = [...imgList];
-  imgList3.splice(1, 0);
-  // imgList3.unshift();
-  console.log(imgList, imgList2, imgList3);
-
-  const handleImgPosition = (addItem, sliceStart) => {
-    if (!addItem || !sliceStart) return;
-    let newImgList = imgList.slice(sliceStart, 2);
-    return newImgList.unshift(imgList[addItem]);
-  };
+  const imgList3 = [...imgList2].slice(0, 2);
+  imgList3.unshift(imgList[1]);
 
   return (
     <Layout>
@@ -278,7 +269,7 @@ const Elements = () => {
                   </Li>
                 ))}
 
-              {imgList.reverse().map((img) => (
+              {imgList3.map((img) => (
                 <Li item={3}>
                   <Img
                     src={img}
