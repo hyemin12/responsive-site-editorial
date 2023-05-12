@@ -193,6 +193,14 @@ const Elements = () => {
               </BtnRow>
               <h3>Pagination</h3>
               <h3>Blockquote</h3>
+              <blockquote cite="">
+                Lorem ipsum dolor vestibulum ante ipsum primis in faucibus
+                vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
+                adipiscing accumsan eu faucibus. Integer ac pellentesque
+                praesent. Lorem ipsum dolor. Lorem ipsum dolor vestibulum ante
+                ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis
+                iaculis volutpat ac adipiscing accumsan eu faucibus.
+              </blockquote>
             </Article>
           </Li>
           <Li item={2}>

@@ -92,5 +92,14 @@ const GlobalStyle = createGlobalStyle`
     transition:all 0.4s;
     cursor:pointer;
   }
+  blockquote{
+    padding-left:2em;
+    border-left:3px solid #ccc;
+    color:${theme.color.grey};
+    font-family:  "Open Sans", sans-serif;
+    font-size:0.9em;
+    font-style:italic;
+    line-height:1.6;
+  }
 `;
 export default GlobalStyle;
