@@ -2,15 +2,16 @@ import DefaultBtn from "./elements/Buttons/DefaultBtn";
 
 const Pagenation = ({ pageLength, setPage, page }) => {
   const handlePrev = () => {
-    if (page <= 1) return;
+    if (page <= 1) {
+      return;
+    }
     setPage(page - 1);
-    return false;
   };
   const handleNext = () => {
-    console.log("다음페이지");
-    if (page <= pageLength) return;
+    if (page >= pageLength) {
+      return;
+    }
     setPage(page + 1);
-    return false;
   };
   console.log(page);
   return (
