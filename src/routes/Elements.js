@@ -28,6 +28,7 @@ import Textarea from "../components/elements/Textarea";
 import Img from "../components/elements/Img";
 import Pagenation from "../components/Pagenation";
 import { useState } from "react";
+import Table from "../components/elements/Table";
 
 const Elements = () => {
   const sample = data.sampleContent;
@@ -170,7 +171,6 @@ const Elements = () => {
                 <PrimaryBtn size={"small"} text={"small"} />
                 <DefaultBtn size={"small"} text={"small"} />
               </BtnRow>
-
               <BtnRow>
                 <Li item={2}>
                   <PrimaryBtn text={"default"} />
@@ -195,12 +195,17 @@ const Elements = () => {
                 <DefaultBtn fit={true} text={"default"} />
                 <DefaultBtn size={"small"} fit={true} text={"small"} />
               </BtnRow>
+            </Article>
+            <Article>
               <h3>Pagination</h3>
               <Pagenation
                 page={currentPage}
                 setPage={setCurrentPage}
                 pageLength={7}
               />
+            </Article>
+
+            <Article>
               <h3>Blockquote</h3>
               <blockquote cite="">
                 Lorem ipsum dolor vestibulum ante ipsum primis in faucibus
@@ -210,11 +215,20 @@ const Elements = () => {
                 ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis
                 iaculis volutpat ac adipiscing accumsan eu faucibus.
               </blockquote>
+            </Article>
+            {/* Table */}
+            <Article>
               <h3>Table</h3>
               <h4>Default</h4>
+              <Table thead={["name", "description", "price"]}></Table>
               <h4>Alternate</h4>
+              <Table
+                type={"alternate"}
+                thead={["name", "description", "price"]}
+              ></Table>
             </Article>
           </Li>
+          {/* Elements 오른쪽 (버튼, 이미지) */}
           <Li item={2}>
             <h3>Buttons</h3>
             <BtnRow>
@@ -282,30 +296,19 @@ const Elements = () => {
             <TextareaWrapper>
               <Textarea placeholder={"Enter yout message"} rows={6} />
             </TextareaWrapper>
-            <br />
-            <h3>Image</h3>
-            <h4>Fit</h4>
-            <Img
-              src="https://plus.unsplash.com/premium_photo-1669316982093-b2ed20cc82ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1197&q=80"
-              alt="sample image"
-              width={"100%"}
-              height={"18em"}
-            />
-            <br />
-            <ImgRow>
-              {imgList.map((img) => (
-                <Li item={3}>
-                  <Img
-                    src={img}
-                    alt="sample image"
-                    width={"100%"}
-                    height={"8em"}
-                  />
-                </Li>
-              ))}
 
-              {imgList2 &&
-                imgList2.map((img) => (
+            <Article>
+              <h3>Image</h3>
+              <h4>Fit</h4>
+              <Img
+                src="https://plus.unsplash.com/premium_photo-1669316982093-b2ed20cc82ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1197&q=80"
+                alt="sample image"
+                width={"100%"}
+                height={"18em"}
+              />
+              <br />
+              <ImgRow>
+                {imgList.map((img) => (
                   <Li item={3}>
                     <Img
                       src={img}
@@ -316,47 +319,60 @@ const Elements = () => {
                   </Li>
                 ))}
 
-              {imgList3.map((img) => (
-                <Li item={3}>
+                {imgList2 &&
+                  imgList2.map((img) => (
+                    <Li item={3}>
+                      <Img
+                        src={img}
+                        alt="sample image"
+                        width={"100%"}
+                        height={"8em"}
+                      />
+                    </Li>
+                  ))}
+
+                {imgList3.map((img) => (
+                  <Li item={3}>
+                    <Img
+                      src={img}
+                      alt="sample image"
+                      width={"100%"}
+                      height={"8em"}
+                    />
+                  </Li>
+                ))}
+              </ImgRow>
+              <p>
+                Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt
+                felis sagittis eget. tempus euismod. Vestibulum ante ipsum
+                primis in faucibus vestibulum. Blandit adipiscing eu felis
+                iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac
+                pellentesque praesent tincidunt felis sagittis eget. tempus
+                euismod. Vestibulum ante ipsum primis sagittis eget. tempus
+                euismod. Vestibulum ante ipsum primis in faucibus vestibulum.
+                Blandit adipiscing eu felis iaculis volutpat ac adipiscing
+                accumsan eu faucibus. Integer ac pellentesque praesent.
+              </p>
+              <p>
+                <span>
                   <Img
-                    src={img}
-                    alt="sample image"
-                    width={"100%"}
-                    height={"8em"}
+                    src="https://plus.unsplash.com/premium_photo-1669316982093-b2ed20cc82ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1197&q=80"
+                    width={"40%"}
+                    height={"auto"}
+                    ratio={"60/37"}
                   />
-                </Li>
-              ))}
-            </ImgRow>
-            <p>
-              Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis
-              sagittis eget. tempus euismod. Vestibulum ante ipsum primis in
-              faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
-              ac adipiscing accumsan eu faucibus. Integer ac pellentesque
-              praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum
-              ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante
-              ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis
-              iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac
-              pellentesque praesent.
-            </p>
-            <p>
-              <span>
-                <Img
-                  src="https://plus.unsplash.com/premium_photo-1669316982093-b2ed20cc82ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1197&q=80"
-                  width={"40%"}
-                  height={"auto"}
-                  ratio={"60/37"}
-                />
-              </span>
-              Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis
-              sagittis eget. tempus euismod. Vestibulum ante ipsum primis in
-              faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
-              ac adipiscing accumsan eu faucibus. Integer ac pellentesque
-              praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum
-              ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante
-              ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis
-              iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac
-              pellentesque praesent.
-            </p>
+                </span>
+                Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt
+                felis sagittis eget. tempus euismod. Vestibulum ante ipsum
+                primis in faucibus vestibulum. Blandit adipiscing eu felis
+                iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac
+                pellentesque praesent tincidunt felis sagittis eget. tempus
+                euismod. Vestibulum ante ipsum primis sagittis eget. tempus
+                euismod. Vestibulum ante ipsum primis in faucibus vestibulum.
+                Blandit adipiscing eu felis iaculis volutpat ac adipiscing
+                accumsan eu faucibus. Integer ac pellentesque praesent.
+              </p>
+            </Article>
           </Li>
         </Row>
       </Section>
