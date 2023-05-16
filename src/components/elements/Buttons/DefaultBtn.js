@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-const DefaultBtn = ({ type, text, size }) => {
+const DefaultBtn = ({ type, text, size, disabled, fit }) => {
   return (
-    <Default type={type} size={size}>
+    <Default type={type} size={size} disabled={disabled} fit={fit}>
       {text}
     </Default>
   );
@@ -13,15 +13,14 @@ export const Default = styled.button`
   color: #f56a6a;
   ${({ size }) => size === "large" && `font-size: 0.9em;`}
   ${({ size }) => size === "small" && `font-size: 0.5em;`};
-  ${({ type }) => type === "fit" && `width:100%`};
-  ${({ type }) =>
-    type === "disabled" &&
+  ${({ fit }) => fit && `width:100%`};
+  ${({ disabled }) =>
+    disabled &&
     `opacity:0.5;
     cursor:inherit;
     &:hover{
       background-color:transparent !important;
     }`}
-
   &:hover {
     background-color: rgba(245, 106, 106, 0.05);
   }

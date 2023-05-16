@@ -1,29 +1,28 @@
 import styled from "styled-components";
 import theme from "../../../styles/theme";
+import { Default } from "./DefaultBtn";
 
-const PrimaryBtn = ({ type, size, text }) => {
+const PrimaryBtn = ({ type, size, text, disabled, fit }) => {
   return (
-    <Primary type={type} size={size} theme={theme}>
+    <Primary
+      type={type}
+      size={size}
+      theme={theme}
+      disabled={disabled}
+      fit={fit}
+    >
       {text}
     </Primary>
   );
 };
-export const Primary = styled.button`
+export const Primary = styled(Default)`
   background-color: ${({ theme }) => theme.color.point};
   border: 3px solid #f56a6a;
   color: #fff;
-  ${({ size }) => size === "large" && `font-size: 0.9em;`};
-  ${({ size }) => size === "small" && `font-size: 0.5em;`};
-  ${({ type }) => type === "fit" && `width:100%`};
-  ${({ type }) =>
-    type === "disabled" &&
-    `opacity:0.5;
-    cursor:inherit;
-    &:hover{
-      opacity: 0.5 !important;
-    }`}
   &:hover {
-    opacity: 0.9;
+    background-color: ${({ theme }) => theme.color.point} !important;
+    opacity: 0.9 !important;
   }
 `;
+
 export default PrimaryBtn;

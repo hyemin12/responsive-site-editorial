@@ -26,6 +26,8 @@ import Radio from "../components/elements/Radio";
 import Checkbox from "../components/elements/Checkbox";
 import Textarea from "../components/elements/Textarea";
 import Img from "../components/elements/Img";
+import Pagenation from "../components/Pagenation";
+import { useState } from "react";
 
 const Elements = () => {
   const sample = data.sampleContent;
@@ -54,6 +56,8 @@ const Elements = () => {
   imgList2.unshift(imgList[2]);
   const imgList3 = [...imgList2].slice(0, 2);
   imgList3.unshift(imgList[1]);
+
+  const [currentPage, setCurrentPage] = useState(1);
 
   return (
     <Layout>
@@ -184,14 +188,19 @@ const Elements = () => {
                 </Li>
               </BtnRow>
               <BtnRow>
-                <PrimaryBtn type={"fit"} text={"default"} />
-                <PrimaryBtn size={"small"} type={"fit"} text={"small"} />
+                <PrimaryBtn fit={true} text={"default"} />
+                <PrimaryBtn size={"small"} fit={true} text={"small"} />
               </BtnRow>
               <BtnRow>
-                <DefaultBtn type={"fit"} text={"default"} />
-                <DefaultBtn size={"small"} type={"fit"} text={"small"} />
+                <DefaultBtn fit={true} text={"default"} />
+                <DefaultBtn size={"small"} fit={true} text={"small"} />
               </BtnRow>
               <h3>Pagination</h3>
+              <Pagenation
+                page={currentPage}
+                setPage={setCurrentPage}
+                pageLength={7}
+              />
               <h3>Blockquote</h3>
               <blockquote cite="">
                 Lorem ipsum dolor vestibulum ante ipsum primis in faucibus
@@ -201,6 +210,9 @@ const Elements = () => {
                 ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis
                 iaculis volutpat ac adipiscing accumsan eu faucibus.
               </blockquote>
+              <h3>Table</h3>
+              <h4>Default</h4>
+              <h4>Alternate</h4>
             </Article>
           </Li>
           <Li item={2}>
@@ -220,20 +232,20 @@ const Elements = () => {
               <PrimaryBtn size={"small"} text={"small"} />
             </BtnRow>
             <BtnRow>
-              <PrimaryBtn type={"fit"} text={"fit"} />
-              <DefaultBtn type={"fit"} text={"fit"} />
+              <PrimaryBtn fit={true} text={"fit"} />
+              <DefaultBtn fit={true} text={"fit"} />
             </BtnRow>
             <BtnRow>
-              <PrimaryBtn size={"small"} type={"fit"} text={"fit+small"} />
-              <DefaultBtn size={"small"} type={"fit"} text={"fit+small"} />
+              <PrimaryBtn size={"small"} fit={true} text={"fit+small"} />
+              <DefaultBtn size={"small"} fit={true} text={"fit+small"} />
             </BtnRow>
             <BtnRow>
               <IconBtn type={"primary"} icon={<FaSearch />} text={"icon"} />
               <IconBtn icon={<FaSearch />} text={"icon"} />
             </BtnRow>
             <BtnRow>
-              <PrimaryBtn type={"disabled"} text={"primary"} />
-              <DefaultBtn type={"disabled"} text={"default"} />
+              <PrimaryBtn disabled={true} text={"primary"} />
+              <DefaultBtn disabled={true} text={"default"} />
             </BtnRow>
             <h3>Form</h3>
             <BtnRow>
