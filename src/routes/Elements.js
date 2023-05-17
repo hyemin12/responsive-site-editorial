@@ -29,6 +29,7 @@ import Img from "../components/elements/Img";
 import Pagenation from "../components/Pagenation";
 import { useState } from "react";
 import Table from "../components/elements/Table";
+import TableTr from "../components/elements/TableTr";
 
 const Elements = () => {
   const sample = data.sampleContent;
@@ -220,7 +221,40 @@ const Elements = () => {
             <Article>
               <h3>Table</h3>
               <h4>Default</h4>
-              <Table thead={["name", "description", "price"]}></Table>
+              <Table thead={["name", "description", "price"]}>
+                <TableTr
+                  data={[
+                    "Item1",
+                    "Ante turpis integer aliquet porttitor.",
+                    "29.99",
+                  ]}
+                />
+                <TableTr
+                  data={[
+                    "Item2",
+                    "Vis ac commodo adipiscing arcu aliquet.",
+                    "19.99",
+                  ]}
+                />
+                <TableTr
+                  data={[
+                    "Item3",
+                    "Morbi faucibus arcu accumsan lorem.",
+                    "29.99",
+                  ]}
+                />
+                <TableTr
+                  data={["Item4", "Vitae integer tempus condimentum.", "19.99"]}
+                />
+                <TableTr
+                  data={[
+                    "Item5",
+                    "Ante turpis integer aliquet porttitor.",
+                    "29.99",
+                  ]}
+                />
+              </Table>
+              <br />
               <h4>Alternate</h4>
               <Table
                 type={"alternate"}

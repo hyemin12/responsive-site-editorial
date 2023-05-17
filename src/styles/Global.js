@@ -101,5 +101,20 @@ const GlobalStyle = createGlobalStyle`
     font-style:italic;
     line-height:1.6;
   }
+  table{
+    border-collapse: collapse;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.9em;
+  }
+  tr {
+    border-bottom:1px solid  rgba(230, 235, 237); 
+    &:last-child{ 
+      border-bottom:none; 
+    }
+  }
+  th, td {
+    padding: 0.5em 1em ;
+   
+  }
 `;
 export default GlobalStyle;
