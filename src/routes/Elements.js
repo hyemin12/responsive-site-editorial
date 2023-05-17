@@ -259,7 +259,39 @@ const Elements = () => {
               <Table
                 type={"alternate"}
                 thead={["name", "description", "price"]}
-              ></Table>
+              >
+                <TableTr
+                  data={[
+                    "Item1",
+                    "Ante turpis integer aliquet porttitor.",
+                    "29.99",
+                  ]}
+                />
+                <TableTr
+                  data={[
+                    "Item2",
+                    "Vis ac commodo adipiscing arcu aliquet.",
+                    "19.99",
+                  ]}
+                />
+                <TableTr
+                  data={[
+                    "Item3",
+                    "Morbi faucibus arcu accumsan lorem.",
+                    "29.99",
+                  ]}
+                />
+                <TableTr
+                  data={["Item4", "Vitae integer tempus condimentum.", "19.99"]}
+                />
+                <TableTr
+                  data={[
+                    "Item5",
+                    "Ante turpis integer aliquet porttitor.",
+                    "29.99",
+                  ]}
+                />
+              </Table>
             </Article>
           </Li>
           {/* Elements 오른쪽 (버튼, 이미지) */}

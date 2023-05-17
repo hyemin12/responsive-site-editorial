@@ -107,7 +107,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 0.9em;
   }
   tr {
-    border-bottom:1px solid  rgba(230, 235, 237); 
+    border-bottom:1px solid  rgba(210, 215, 217); 
     &:last-child{ 
       border-bottom:none; 
     }

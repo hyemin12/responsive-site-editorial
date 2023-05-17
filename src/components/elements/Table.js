@@ -3,14 +3,14 @@ import styled from "styled-components";
 const Table = ({ type, thead, children }) => {
   console.log(thead);
   return (
-    <TableTag type={type}>
-      <Thead>
+    <TableTag>
+      <thead>
         {thead &&
           thead.map((text, idx) => (
             <HeadTh className={idx === 1 && "wide"}>{text}</HeadTh>
           ))}
-      </Thead>
-      <Tbody>{children}</Tbody>
+      </thead>
+      <Tbody type={type}>{children}</Tbody>
       <tfoot>
         <tr>
           <td></td>
@@ -22,9 +22,6 @@ const Table = ({ type, thead, children }) => {
 const TableTag = styled.table`
   width: 100%;
 `;
-const Thead = styled.thead`
-  border-bottom: 2px solid #ccc;
-`;
 
 const HeadTh = styled.th`
   text-transform: capitalize;
@@ -33,10 +30,19 @@ const HeadTh = styled.th`
   }
 `;
 const Tbody = styled.tbody`
+  border-top: 2px solid #ccc;
   border-bottom: 2px solid #ccc;
   // 홀수 줄에만 적용
   tr:nth-child(odd) {
     background-color: rgba(230, 235, 237, 0.25);
   }
+  ${({ type }) =>
+    type === "alternate" &&
+    `border-top: none;
+    border-bottom: none;
+    td {
+    border: 1px solid rgba(210, 215, 217) !important;
+    }
+  `}
 `;
 export default Table;
