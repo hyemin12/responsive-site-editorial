@@ -30,6 +30,7 @@ import Pagenation from "../components/Pagenation";
 import { useState } from "react";
 import Table from "../components/elements/Table";
 import TableTr from "../components/elements/TableTr";
+import FloatImgText from "../components/elements/FloatImgText";
 
 const Elements = () => {
   const sample = data.sampleContent;
@@ -408,36 +409,30 @@ const Elements = () => {
                   </Li>
                 ))}
               </ImgRow>
-              <p>
-                Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt
-                felis sagittis eget. tempus euismod. Vestibulum ante ipsum
-                primis in faucibus vestibulum. Blandit adipiscing eu felis
-                iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac
-                pellentesque praesent tincidunt felis sagittis eget. tempus
-                euismod. Vestibulum ante ipsum primis sagittis eget. tempus
-                euismod. Vestibulum ante ipsum primis in faucibus vestibulum.
-                Blandit adipiscing eu felis iaculis volutpat ac adipiscing
-                accumsan eu faucibus. Integer ac pellentesque praesent.
-              </p>
-              <p>
-                <span>
-                  <Img
-                    src="https://plus.unsplash.com/premium_photo-1669316982093-b2ed20cc82ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1197&q=80"
-                    width={"40%"}
-                    height={"auto"}
-                    ratio={"60/37"}
-                  />
-                </span>
-                Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt
-                felis sagittis eget. tempus euismod. Vestibulum ante ipsum
-                primis in faucibus vestibulum. Blandit adipiscing eu felis
-                iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac
-                pellentesque praesent tincidunt felis sagittis eget. tempus
-                euismod. Vestibulum ante ipsum primis sagittis eget. tempus
-                euismod. Vestibulum ante ipsum primis in faucibus vestibulum.
-                Blandit adipiscing eu felis iaculis volutpat ac adipiscing
-                accumsan eu faucibus. Integer ac pellentesque praesent.
-              </p>
+            </Article>
+            <Article>
+              <h4>Left & Right</h4>
+              <FloatImgText
+                src={
+                  "https://plus.unsplash.com/premium_photo-1669316982093-b2ed20cc82ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=240&q=80"
+                }
+                alt={"img-sample"}
+                text={
+                  "Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent."
+                }
+                floatDirection={"left"}
+              />
+              <br />
+              <FloatImgText
+                src={
+                  "https://plus.unsplash.com/premium_photo-1669316982093-b2ed20cc82ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=240&q=80"
+                }
+                alt={"img-sample"}
+                text={
+                  "Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent."
+                }
+                floatDirection={"right"}
+              />
             </Article>
           </Li>
         </Row>

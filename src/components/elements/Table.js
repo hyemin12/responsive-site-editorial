@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const Table = ({ type, thead, children }) => {
-  console.log(thead);
   return (
     <TableTag>
       <thead>
@@ -13,7 +12,8 @@ const Table = ({ type, thead, children }) => {
       <Tbody type={type}>{children}</Tbody>
       <tfoot>
         <tr>
-          <td></td>
+          <td colspan={2}></td>
+          <td>100.00</td>
         </tr>
       </tfoot>
     </TableTag>

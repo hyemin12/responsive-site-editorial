@@ -16,7 +16,7 @@ const Img = ({ type, src, alt, width, height, ratio, path, imgWidth }) => {
 };
 export const ImgStyle = css`
   flex-shrink: 0;
-  display: block;
+
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   border-radius: 6px;
@@ -31,12 +31,12 @@ const ImgLink = styled(Link)`
   ${ImgStyle}
 `;
 export const Image = styled.img`
+  display: block;
   width: ${({ imgWidth }) => (imgWidth ? "auto" : "100%")};
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  object-fit: cover;
   transition: 0.4s;
   ${({ type }) =>
     type === "link" &&

@@ -64,6 +64,7 @@ const GlobalStyle = createGlobalStyle`
       color: #f56a6a !important
     }
   };
+  img{object-fit:cover;}
 
   input, select ,textarea {
     display:block;
