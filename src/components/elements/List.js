@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import theme from "../../styles/theme";
 
-const Ul = ({ type, lists }) => {
+const List = ({ type, lists }) => {
   if (type === "ordered")
     return (
       <Ol>
@@ -56,4 +56,4 @@ const Li = styled.li`
     &:first-child{padding-top:0;}`}
 `;
 
-export default Ul;
+export default List;

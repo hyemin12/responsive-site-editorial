@@ -15,7 +15,7 @@ import {
   FaTumblr,
 } from "react-icons/fa";
 
-import Ul from "../components/elements/Ul";
+import List from "../components/elements/List";
 import Definition from "../components/elements/Definition";
 import DefaultBtn from "../components/elements/Buttons/DefaultBtn";
 import PrimaryBtn from "../components/elements/Buttons/PrimaryBtn";
@@ -110,7 +110,7 @@ const Elements = () => {
                 <sup> superscript</sup> text and this is <sub>subscript</sub>{" "}
                 text. This is <u> underlined</u> and this is code:
                 <code> for (;;) &#123; ... &#125;</code>. Finally, this is a{" "}
-                <a href="javascript:void(0)">link</a>.
+                <a href="{() => false}">link</a>.
               </P>
             </Article>
 
@@ -132,15 +132,15 @@ const Elements = () => {
               <Row>
                 <Li item={2}>
                   <h4>Unordered</h4>
-                  <Ul type={"unordered"} lists={lists.slice(0, 3)} />
+                  <List type={"unordered"} lists={lists.slice(0, 3)} />
 
                   <h4>Alternate</h4>
-                  <Ul type={"alternate"} lists={lists.slice(0, 3)} />
+                  <List type={"alternate"} lists={lists.slice(0, 3)} />
                 </Li>
 
                 <Li item={2}>
                   <h4>Ordered</h4>
-                  <Ul type={"ordered"} lists={lists} />
+                  <List type={"ordered"} lists={lists} />
                   <h4>Icons</h4>
                   <Row>
                     {icons.map((icon, idx) => (
