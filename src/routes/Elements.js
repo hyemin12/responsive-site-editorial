@@ -413,6 +413,7 @@ const Elements = () => {
             <Article>
               <h4>Left & Right</h4>
               <FloatImgText
+                floatDirection={"left"}
                 src={
                   "https://plus.unsplash.com/premium_photo-1669316982093-b2ed20cc82ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=240&q=80"
                 }
@@ -420,10 +421,10 @@ const Elements = () => {
                 text={
                   "Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent."
                 }
-                floatDirection={"left"}
               />
               <br />
               <FloatImgText
+                floatDirection={"right"}
                 src={
                   "https://plus.unsplash.com/premium_photo-1669316982093-b2ed20cc82ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=240&q=80"
                 }
@@ -431,7 +432,6 @@ const Elements = () => {
                 text={
                   "Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent."
                 }
-                floatDirection={"right"}
               />
             </Article>
           </Li>

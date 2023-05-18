@@ -13,7 +13,8 @@ const FloatImgText = ({ src, alt, text, floatDirection }) => {
 const ImgWrapper = styled.div`
   float: ${({ floatDirection }) => floatDirection};
   border-radius: 6px;
-  margin-right: 1.5em;
+  ${({ floatDirection }) =>
+    floatDirection === "left" ? "margin-right: 1.5em;" : "margin-left: 1.5em;"}
   margin-bottom: 1em;
   overflow: hidden;
 `;
