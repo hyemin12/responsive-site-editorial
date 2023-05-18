@@ -142,7 +142,7 @@ const Elements = () => {
                   <h4>Ordered</h4>
                   <List type={"ordered"} lists={lists} />
                   <h4>Icons</h4>
-                  <Row>
+                  <Row justify={"space-between"} gap={"0"}>
                     {icons.map((icon, idx) => (
                       <HyperLink key={idx} text={icon} size={"1.2em"} />
                     ))}
@@ -460,7 +460,8 @@ const Section = styled.section`
 `;
 const Row = styled.ul`
   display: flex;
-  gap: 2em;
+  gap: ${({ gap }) => (gap ? gap : "2em")};
+  justify-content: ${({ justify }) => (justify ? "space-between" : "start")};
 `;
 const BtnRow = styled(Row)`
   gap: 1em;

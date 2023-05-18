@@ -58,9 +58,9 @@ const Title = styled(H3)`
   }
 `;
 const SubTitle = styled.h4`
-  padding: 1.5em 0;
-  font-size: 1em;
+  margin-bottom: 1.5em;
   color: ${({ theme }) => theme.color.grey};
+  font-size: 1em;
   font-weight: 400;
   text-transform: uppercase;
   @media ${({ theme }) => theme.device.desktopWide} {

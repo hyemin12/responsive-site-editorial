@@ -132,24 +132,24 @@ const SideBar = () => {
             aliquam.
           </P>
           <Row>
-            <i>
+            <Icon>
               <FaEnvelope />
-            </i>
+            </Icon>
             <HyperLink
               path={"https://mail.google.com/mail/u/0/#inbox"}
               text={"information@untitled.tld"}
             />
           </Row>
           <Row>
-            <i>
+            <Icon>
               <FaPhone />
-            </i>
+            </Icon>
             <p>(000) 000-0000</p>
           </Row>
           <Row>
-            <i>
+            <Icon>
               <FaHome />
-            </i>
+            </Icon>
             <p>1234 Somewhere Road #8254 Nashville, TN 00000-0000</p>
           </Row>
         </Wrapper>
@@ -244,6 +244,10 @@ const Row = styled.div`
   &:last-child {
     border-bottom: none;
   }
+`;
+const Icon = styled.i`
+  color: ${({ theme }) => theme.color.point};
+  font-size: 1.3em;
 `;
 
 export default SideBar;

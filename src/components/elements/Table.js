@@ -12,7 +12,7 @@ const Table = ({ type, thead, children }) => {
       <Tbody type={type}>{children}</Tbody>
       <tfoot>
         <tr>
-          <td colspan={2}></td>
+          <td colSpan={2}></td>
           <td>100.00</td>
         </tr>
       </tfoot>
@@ -23,7 +23,8 @@ const TableTag = styled.table`
   width: 100%;
 `;
 
-const HeadTh = styled.th`
+const HeadTh = styled.td`
+  font-weight: bold;
   text-transform: capitalize;
   &.wide {
     width: 100%;
