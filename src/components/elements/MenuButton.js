@@ -13,14 +13,14 @@ const MenuButton = (props) => {
 };
 
 const I = styled.i`
-  font-size: 2em;
+  font-size: 1.5em;
+  color: ${({ theme }) => theme.color.point};
   position: absolute;
   top: 1em;
   right: -60px;
   cursor: pointer;
   @media ${({ theme }) => theme.device.mobile} {
     display: block;
-    background-color: #ddd;
     border-radius: 6px;
     padding: 0.5em 1em 0.25em 1em;
     padding-bottom: 0.25em;

@@ -159,7 +159,7 @@ const SideBar = () => {
   );
 };
 const Container = styled.div`
-  display: none;
+  display: block;
   flex-shrink: 0;
   width: 20em;
   background-color: #f5f6f7;
@@ -179,7 +179,7 @@ const Container = styled.div`
 `;
 
 const Inner = styled.div`
-  width: 20 em;
+  width: 20em;
   padding: 1.25em;
   background-color: #f5f6f7;
   @media ${({ theme }) => theme.device.desktopWide} {

@@ -16,7 +16,7 @@ const Img = ({ type, src, alt, width, height, ratio, path, imgWidth }) => {
 };
 export const ImgStyle = css`
   flex-shrink: 0;
-
+  display: block;
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   border-radius: 6px;
