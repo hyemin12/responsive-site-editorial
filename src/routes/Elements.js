@@ -31,6 +31,7 @@ import { useState } from "react";
 import Table from "../components/elements/Table";
 import TableTr from "../components/elements/TableTr";
 import FloatImgText from "../components/elements/FloatImgText";
+import BoxText from "../components/elements/BoxText";
 
 const Elements = () => {
   const sample = data.sampleContent;
@@ -255,7 +256,7 @@ const Elements = () => {
                   ]}
                 />
               </Table>
-              <br />
+
               <h4>Alternate</h4>
               <Table
                 type={"alternate"}
@@ -422,6 +423,7 @@ const Elements = () => {
                   "Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent."
                 }
               />
+
               <br />
               <FloatImgText
                 floatDirection={"right"}
@@ -433,6 +435,18 @@ const Elements = () => {
                   "Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent."
                 }
               />
+            </Article>
+            <Article>
+              <h3>Box</h3>
+              <BoxText
+                text={
+                  "Felis sagittis eget tempus primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Magna sed etiam ante ipsum primis in faucibus vestibulum."
+                }
+              />
+            </Article>
+            <Article>
+              <h3>Preformatted</h3>
+              <code></code>
             </Article>
           </Li>
         </Row>
