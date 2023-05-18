@@ -4,7 +4,7 @@ import axios from "axios";
 
 import Layout from "../components/Layout";
 import Intro from "../components/Intro";
-import Title from "../components/elements/Title";
+import Title, { H3 } from "../components/elements/Title";
 import Feature from "../components/Feature";
 import MainPost from "../components/MainPost";
 
@@ -39,7 +39,7 @@ const Home = () => {
 
       {/* FEATURES */}
       <Section>
-        <Title text={"Features"} size={"1.6em"} border={"bottom"} />
+        <FeaturesTitle>Features</FeaturesTitle>
         <FeatureWrapper theme={theme}>
           {features &&
             features.map((feature) => (
@@ -79,6 +79,16 @@ const FeatureWrapper = styled.ul`
     display: block;
     padding-top: 2em;
   }
+`;
+const FeaturesTitle = styled(H3)`
+margin-bottom:2.5em;
+border-bottom:3px solid ${({ theme }) => theme.color.point};
+font-size:1.6em;
+@media ${({ theme }) => theme.device.desktopWide} {
+  margin-bottom:4em;
+}
+
+text={""} size={"1.6em"} border={"bottom"} />
 `;
 
 const PostsWrapper = styled.ul`

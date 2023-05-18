@@ -70,7 +70,9 @@ const SideBar = () => {
       setVisible(false);
     }
   };
+
   useEffect(() => {
+    handleVisible();
     window.addEventListener("resize", handleVisible);
     return () => window.removeEventListener("resize", handleVisible);
   }, []);
@@ -78,7 +80,7 @@ const SideBar = () => {
   return (
     <Container theme={theme} className={visible ? "visible" : "hide"}>
       <MenuButton func={handleMenu} />
-      <Inner ref={innerRef} theme={theme}>
+      <Inner ref={innerRef} theme={theme} visible={visible}>
         <SearchBoxWrapper id="search-box" theme={theme}>
           <Form>
             <SearchBox
@@ -157,14 +159,15 @@ const SideBar = () => {
   );
 };
 const Container = styled.div`
+  display: none;
   flex-shrink: 0;
-  width: 17em;
+  width: 20em;
   background-color: #f5f6f7;
   transition: 0.4s;
   position: relative;
   z-index: 5;
   &.hide {
-    margin-left: -17em;
+    margin-left: -20em;
   }
   @media ${({ theme }) => theme.device.tablet} {
     width: 18em;
@@ -174,11 +177,11 @@ const Container = styled.div`
     }
   }
 `;
+
 const Inner = styled.div`
-  width: 17em;
+  width: 20 em;
   padding: 1.25em;
   background-color: #f5f6f7;
-
   @media ${({ theme }) => theme.device.desktopWide} {
     padding: 2em;
   }
@@ -190,11 +193,12 @@ const Inner = styled.div`
     overflow-x: hidden;
     overflow-y: scroll;
   }
+  ${({ visible }) => !visible && `display:none;`}
 `;
 
 // Search
 const SearchBoxWrapper = styled.div`
-  width: 17em;
+  width: 20em;
   background-color: #eff1f2;
   padding: 1.25em;
   margin-top: -1.25em;

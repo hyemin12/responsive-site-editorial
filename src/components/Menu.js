@@ -10,16 +10,16 @@ const Menu = () => {
   const [visible, setVisible] = useState(false);
 
   const links = [
-    { title: "Homepage", path: "" },
-    { title: "Generic", path: "" },
-    { title: "Etiam Dolore", path: "" },
-    { title: "Adipicing", path: "" },
+    { title: "Homepage", path: "/" },
+    { title: "Generic", path: "/generic" },
+    { title: "Elements", path: "/elements" },
     {
       title: "Submenu",
       path: "",
       submenu: ["lorem dolor", "Ipsum adipicing", "tempus magna"],
     },
-    { title: "Elements", path: "" },
+    { title: "Etiam Dolore", path: "" },
+    { title: "Adipicing", path: "" },
   ];
   return (
     <ul className="menu">
@@ -57,7 +57,9 @@ const Menu = () => {
     </ul>
   );
 };
-
+const LinkStyle = styled(Link)`
+  text-decoration: none;
+`;
 const Li = styled.li`
   padding: 1em 0;
   border-top: 1px solid #ddd;
@@ -66,7 +68,7 @@ const Li = styled.li`
     border: none;
   }
 `;
-const NavItem = styled(Link)`
+const NavItem = styled(LinkStyle)`
   display: block;
   font-size: 0.7em;
   color: ${({ theme }) => theme.color.default};
@@ -87,10 +89,11 @@ const SubMenu = styled(NavItem)`
     color: #f56a6a;
   }
 `;
-const SubNavItem = styled(Link)`
+const SubNavItem = styled(LinkStyle)`
   display: block;
   padding: 0.5em 0;
   margin-left: 20px;
+  color: ${({ theme }) => theme.color.default};
   font-size: 0.8em;
   @media ${({ theme }) => theme.device.desktopWide} {
     font-size: 0.9em;

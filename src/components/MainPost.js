@@ -5,6 +5,7 @@ import Img from "./elements/Img";
 import Title from "./elements/Title";
 
 import theme from "../styles/theme";
+import PrimaryBtn from "./elements/Buttons/PrimaryBtn";
 
 const MainPost = (props) => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const MainPost = (props) => {
           <p key={idx}>{paragh}</p>
         ))}
       </TextWrapper>
-      <button onClick={handleNavigate}>more</button>
+      <PrimaryBtn text={"more"} onClick={handleNavigate} />
     </PostItem>
   );
 };

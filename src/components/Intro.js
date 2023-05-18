@@ -3,6 +3,7 @@ import styled from "styled-components";
 import theme from "../styles/theme";
 import { H3 } from "./elements/Title";
 import { Image } from "./elements/Img";
+import PrimaryBtn from "./elements/Buttons/PrimaryBtn";
 
 // import Img from "./elements/Img";
 
@@ -21,7 +22,7 @@ const Intro = () => {
           finibus nisi nec lacinia. Nam maximus erat id euismod egestas.
           Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.
         </P>
-        <button>Learn more</button>
+        <PrimaryBtn text={"Learn more"} />
       </div>
 
       <ImgWrapper>

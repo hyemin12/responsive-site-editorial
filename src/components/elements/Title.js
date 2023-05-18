@@ -1,17 +1,26 @@
 import styled from "styled-components";
 
-const Title = ({ text, border, type, padding, size }) => {
+const Title = ({ text, border, type, marginBottom, padding, size }) => {
   return (
-    <H3 border={border} padding={padding} size={size}>
+    <H3
+      border={border}
+      padding={padding}
+      marginBottom={marginBottom}
+      size={size}
+    >
       {text}
     </H3>
   );
 };
 
 export const H3 = styled.h3`
-  font-size: ${({ size }) => (size ? size : "1.2em")};
-
+  display: inline-block;
+  margin-bottom: ${({ marginBottom }) => marginBottom && marginBottom};
   padding: ${({ padding }) => (padding ? padding : 0)};
+
+  font-size: ${({ size }) => (size ? size : "1.2em")};
+  text-transform: capitalize;
+
   ${({ border, theme }) =>
     border &&
     `padding-bottom: 0.25em;

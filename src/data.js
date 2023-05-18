@@ -4,7 +4,7 @@ export const data = {
   contents: [
     {
       id: 1681903317264,
-      title: "Interdum aenean",
+      title: "generic",
       category: "generic",
       text: "Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. \n Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.",
       img: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -12,7 +12,7 @@ export const data = {
     {
       id: 1681903398512,
       title: "Nulla amet dolore",
-      category: "generic",
+      category: "etiam_dolore",
       text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam. \n Pellentesque dictum hendrerit urna sed tincidunt. Nam accumsan sapien quis metus elementum ultrices. Integer eu ante in odio suscipit venenatis eu non ex. In venenatis, felis at maximus vulputate, quam libero hendrerit nibh, vehicula viverra diam sem at erat. Sed aliquet ornare imperdiet. Morbi vitae dignissim arcu. Cras elementum magna ac arcu porttitor, sed semper orci dapibus. Donec vel elit ut justo volutpat tempus. \n Praesent iaculis, ligula eu fringilla aliquam, ante massa sagittis augue, vel volutpat urna ex iaculis libero. Donec ac ornare tortor, quis porttitor nunc. Etiam facilisis euismod justo, vel euismod ipsum tristique fermentum. Quisque quis enim varius, fringilla orci sed, efficitur libero. Sed urna urna, lacinia nec gravida ut, tincidunt bibendum turpis. Sed vel tempus libero. Etiam in commodo justo, vitae posuere elit. Vivamus nec metus sit amet ipsum vehicula tincidunt. Integer aliquet et ante et auctor. Donec cursus dictum odio ac convallis. Maecenas non sem risus. Nullam eu interdum elit, ac eleifend metus. Aliquam nec est orci. Quisque cursus orci non elit lobortis, non ultrices odio congue. Vestibulum vestibulum eros sed metus tempor facilisis. Mauris finibus quam sed augue commodo, quis mollis dui vestibulum. \n Sed vestibulum dignissim nibh ornare facilisis. Quisque tempor risus ullamcorper molestie maximus. Suspendisse eu facilisis est, non tempor ipsum. Nullam pharetra nisl metus, sagittis rhoncus magna euismod auctor. Quisque mattis felis sed scelerisque bibendum. Nulla purus sapien, scelerisque non fringilla ac, posuere fermentum quam. Sed lobortis magna elementum leo viverra ullamcorper. Nulla non justo blandit, consequat nibh sed, sagittis lectus. ",
       img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     },
@@ -88,6 +88,20 @@ export const data = {
       category: "Adipicing",
       text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam. \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et pulvinar purus, vel congue odio. Aenean vel egestas nulla. Duis in euismod magna. Duis sit amet mollis nisl. Maecenas imperdiet dolor tristique leo mollis, eget cursus dolor iaculis. Aenean nec mauris vulputate, egestas massa id, posuere justo. Morbi viverra nibh elit, et luctus diam sodales quis. Nullam accumsan purus at ipsum maximus faucibus. Nunc orci odio, finibus ac volutpat ac, porta et purus. Donec nec sollicitudin leo. Quisque dui turpis, malesuada nec mauris quis, hendrerit fringilla ante. Sed posuere urna ipsum, non congue dui scelerisque eu. Aliquam eleifend mauris at magna sollicitudin iaculis. \n Cras dui velit, consectetur ut interdum vitae, convallis vitae massa. Curabitur scelerisque, magna in fermentum malesuada, purus elit condimentum dui, at posuere orci dui ac leo. Curabitur commodo lacinia quam, ut varius diam lobortis vitae. Quisque semper ornare ligula ac consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam sed iaculis nulla, id semper enim. Ut non fringilla augue, vel maximus turpis.",
       img: "https://images.unsplash.com/photo-1458501534264-7d326fa0ca04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    },
+  ],
+  sampleContent: [
+    {
+      title: "Sample Content",
+      text: "Praesent ac adipiscing ullamcorper semper ut amet ac risus. Lorem sapien ut odio odio nunc. Ac adipiscing nibh porttitor erat risus justo adipiscing adipiscing amet placerat accumsan. Vis. Faucibus odio magna tempus adipiscing a non. In mi primis arcu ut non accumsan vivamus ac blandit adipiscing adipiscing arcu metus praesent turpis eu ac lacinia nunc ac commodo gravida adipiscing eget accumsan ac nunc.",
+    },
+    {
+      title: "Magna odio tempus commodo",
+      text: "In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor. Ante commodo blandit adipiscing integer semper orci eget. Faucibus commodo adipiscing mi eu nullam accumsan morbi arcu ornare odio mi adipiscing nascetur lacus ac interdum morbi accumsan vis mi accumsan.",
+    },
+    {
+      title: "Sem turpis amet semper",
+      text: "Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat commodo eu sed ante lacinia. Sapien a lorem in integer ornare praesent commodo adipiscing arcu in massa commodo lorem accumsan at odio massa ac ac. Semper adipiscing varius montes viverra nibh in adipiscing blandit tempus accumsan.",
     },
   ],
 };
