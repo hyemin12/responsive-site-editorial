@@ -15,11 +15,10 @@ function App() {
         <GlobalStyle />
         <BrowserRouter>
           <Routes>
-            <Route path="/:id" element={<Home />}></Route>
-            <Route path="/generic" element={<Post />}></Route>
-            <Route path="/elements" element={<Elements />}></Route>
-            <Route path="/etiam_dolore" element={<Post />}></Route>
             <Route path="/" element={<Home />}></Route>
+            <Route path="/:id" element={<Post />}></Route>
+            {/* <Route path="/generic" element={<Post />}></Route> */}
+            <Route path="/elements" element={<Elements />}></Route>
           </Routes>
         </BrowserRouter>
       </div>

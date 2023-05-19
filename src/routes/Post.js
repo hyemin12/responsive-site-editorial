@@ -11,13 +11,16 @@ const Post = () => {
   const param = useLocation();
   const postCategory = param.pathname.replace("/", "");
   const post = data.contents.filter(
-    (element) => element.category.toUpperCase() === postCategory.toUpperCase()
+    (element) =>
+      element.category.toUpperCase() ===
+      postCategory.toUpperCase().replaceAll("%20", " ")
   )[0];
-  console.log(post);
+  console.log(postCategory, post, param);
   const { title, text, img } = post;
+
   return (
     <Layout>
-      {post && (
+      {post ? (
         <>
           <Title text={title} size={"2.7em"} padding={"1.5em 0 1em 0"} />
           <Img src={img} alt={title} width={"100%"} ratio={"1280 / 416"} />
@@ -27,6 +30,8 @@ const Post = () => {
             ))}
           </TextWrapper>
         </>
+      ) : (
+        <div>페이지 오류</div>
       )}
     </Layout>
   );
