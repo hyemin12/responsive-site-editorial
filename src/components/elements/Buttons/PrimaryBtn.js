@@ -2,7 +2,7 @@ import styled from "styled-components";
 import theme from "../../../styles/theme";
 import { Default } from "./DefaultBtn";
 
-const PrimaryBtn = ({ type, size, text, disabled, fit }) => {
+const PrimaryBtn = ({ type, size, text, disabled, fit, onClick }) => {
   return (
     <Primary
       type={type}
@@ -10,6 +10,7 @@ const PrimaryBtn = ({ type, size, text, disabled, fit }) => {
       theme={theme}
       disabled={disabled}
       fit={fit}
+      onClick={onClick}
     >
       {text}
     </Primary>

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const DefaultBtn = ({ type, text, size, disabled, fit, onClick }) => {
-  // console.log(onClick);
   return (
     <Default
       type={type}

@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Layout from "../components/Layout";
 import Title from "../components/elements/Title";
 import { data } from "../data";
@@ -9,13 +9,16 @@ import theme from "../styles/theme";
 
 const Post = () => {
   const param = useLocation();
-  const postCategory = param.pathname.replace("/", "");
+  const { id } = useParams();
+  const postCategory = id
+    ? id * 1
+    : param.pathname.replace("/", "").toUpperCase().replaceAll("%20", " ");
   const post = data.contents.filter(
     (element) =>
-      element.category.toUpperCase() ===
-      postCategory.toUpperCase().replaceAll("%20", " ")
+      element.category.toUpperCase() === postCategory ||
+      element.id === postCategory
   )[0];
-  console.log(postCategory, post, param);
+  console.log(postCategory, post, param, id);
   const { title, text, img, subtitle, text2 } = post;
 
   return (
