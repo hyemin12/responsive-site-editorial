@@ -81,7 +81,7 @@ const ImgWrapper = styled.div`
   width: 50%;
   height: 100%;
   border-radius: 6px;
-  aspect-ratio: 88 / 69;
+  aspect-ratio: 81 / 69;
   position: relative;
   overflow: hidden;
   @media ${({ theme }) => theme.device.tabletPortrait} {

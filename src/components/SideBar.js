@@ -99,7 +99,7 @@ const SideBar = () => {
             text={"Menu"}
             border={"bottom"}
             padding={"2em 0"}
-            size={"1.4em"}
+            size={"1.2em"}
           />
 
           <Menu />
@@ -110,7 +110,7 @@ const SideBar = () => {
             text={"Etiam Dolore"}
             border={"bottom"}
             padding={"2em 0"}
-            size={"1.4em"}
+            size={"1.2em"}
           />
           {posts &&
             posts.map((post, idx) => (
@@ -123,7 +123,7 @@ const SideBar = () => {
             text={"Get in touch"}
             border={"bottom"}
             padding={"2em 0"}
-            size={"1.4em"}
+            size={"1.2em"}
           />
           <P>
             Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit

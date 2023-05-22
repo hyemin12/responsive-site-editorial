@@ -14,15 +14,12 @@ const Post = () => {
   const param = useLocation();
   const { id } = useParams();
 
-  const postId = id
-    ? id * 1
-    : param.pathname.replace("/", "").toUpperCase().replaceAll("%20", " ");
-
-  const post = data.contents.filter(
-    (element) =>
-      element.category.toUpperCase() === postId || element.id === postId
+  const postId = id ? id * 1 : param.pathname.replace("/", "").toLowerCase();
+  const post = data.contents.filter((element) =>
+    id ? element.id === postId : element.category.toLowerCase() === postId
   )[0];
-
+  console.log(param, id, postId, post);
+  //.replaceAll("%20", " ")
   // 페이지 이동 시 스크롤 위치 맨 위로 이동시키기
   useEffect(() => {
     window.scrollTo(0, 0);
