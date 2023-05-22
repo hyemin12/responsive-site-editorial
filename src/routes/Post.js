@@ -1,55 +1,70 @@
+import { useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import Layout from "../components/Layout";
-import Title from "../components/elements/Title";
-import { data } from "../data";
-import Img from "../components/elements/Img";
 import styled from "styled-components";
 
+import Layout from "../components/Layout";
+import Title from "../components/elements/Title";
+import Img from "../components/elements/Img";
+
 import theme from "../styles/theme";
+
+import { data } from "../data";
 
 const Post = () => {
   const param = useLocation();
   const { id } = useParams();
-  const postCategory = id
+
+  const postId = id
     ? id * 1
     : param.pathname.replace("/", "").toUpperCase().replaceAll("%20", " ");
+
   const post = data.contents.filter(
     (element) =>
-      element.category.toUpperCase() === postCategory ||
-      element.id === postCategory
+      element.category.toUpperCase() === postId || element.id === postId
   )[0];
-  console.log(postCategory, post, param, id);
+
+  // 페이지 이동 시 스크롤 위치 맨 위로 이동시키기
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { title, text, img, subtitle, text2 } = post;
 
+  if (post === "undefined" || !post)
+    return (
+      <Layout>
+        <h2>페이지 오류</h2>
+      </Layout>
+    );
   return (
     <Layout>
-      {post ? (
-        <>
-          <Title text={title} size={"2.7em"} padding={"1.5em 0 1em 0"} />
-          <Img src={img} alt={title} width={"100%"} ratio={"1280 / 416"} />
-          <TextWrapper>
-            {text.split("\n").map((t, idx) => (
-              <P theme={theme} key={idx}>
-                {t}
-              </P>
-            ))}
-          </TextWrapper>
-          {subtitle && text2 && (
-            <SubTextWrapper>
-              <Title text={subtitle} size={"1.8em"} />
-              <>
-                {text2.split("\n").map((t, idx) => (
-                  <P theme={theme} key={idx}>
-                    {t}
-                  </P>
-                ))}
-              </>
-            </SubTextWrapper>
-          )}
-        </>
-      ) : (
-        <div>페이지 오류</div>
-      )}
+      <section>
+        {post && (
+          <>
+            <Title text={title} size={"2.7em"} padding={"1.5em 0 1em 0"} />
+            <Img src={img} alt={title} width={"100%"} ratio={"1280 / 416"} />
+            <TextWrapper>
+              {text.split("\n").map((t, idx) => (
+                <P theme={theme} key={idx}>
+                  {t}
+                </P>
+              ))}
+            </TextWrapper>
+            {subtitle && text2 && (
+              <SubTextWrapper>
+                <Title text={subtitle} size={"1.8em"} />
+                <>
+                  {text2.split("\n").map((t, idx) => (
+                    <P theme={theme} key={idx}>
+                      {t}
+                    </P>
+                  ))}
+                </>
+              </SubTextWrapper>
+            )}
+          </>
+        )}
+      </section>
     </Layout>
   );
 };
