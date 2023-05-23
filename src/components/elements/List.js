@@ -54,6 +54,11 @@ const Li = styled.li`
     padding: 0.5em 0;
     border-bottom:1px solid #ccc; 
     &:first-child{padding-top:0;}`}
+
+
+    @media ${({ theme }) => theme.device.tablet} {
+    font-size: 0.8em;
+  }
 `;
 
 export default List;

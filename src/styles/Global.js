@@ -34,22 +34,25 @@ const GlobalStyle = createGlobalStyle`
     margin-bottom:1em;
   }
   h4{
-    @media ${({ theme }) => theme.device.desktopWide}{
+    @media ${theme.device.desktopWide}{
       font-size:1.3em !important;
     };
   }
 
   p {
     font-family: "Open Sans", sans-serif;
-    color: ${({ theme }) => theme.color.grey};
+    color: ${theme.color.grey};
     font-size: 0.9em;
     line-height: 1.6;
-    @media ${({ theme }) => theme.device.desktopWide}{
+    @media ${theme.device.desktopWide}{
       font-size:1em ;
     };
+    @media ${theme.device.tablet}{
+      font-size:0.8em;
+    }
   }
   a {
-    color: ${({ theme }) => theme.color.grey};
+    color: ${theme.color.grey};
     text-decoration:none;
     transition:0.4s;
     &:hover{
@@ -108,6 +111,9 @@ const GlobalStyle = createGlobalStyle`
     font-size:0.9em;
     font-style:italic;
     line-height:1.6;
+    @media ${theme.device.tablet}{
+      font-size:0.8em;
+    }
   }
   table{
     border-collapse: collapse;
@@ -122,6 +128,10 @@ const GlobalStyle = createGlobalStyle`
   }
   th, td {
     padding: 0.5em 1em ;
+    color:  ${theme.color.grey};
+    @media ${theme.device.tablet}{
+      font-size:0.9em;
+    }
    
   }
 `;
