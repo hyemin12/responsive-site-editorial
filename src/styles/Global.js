@@ -77,7 +77,14 @@ const GlobalStyle = createGlobalStyle`
       border-color: #f56a6a;
     }
   };
- 
+  label{
+    font-family: "Open Sans", sans-serif;
+    font-size:0.9em;
+    @media ${theme.device.tablet}{
+      font-size:0.8em;
+    }
+
+  }
   li{
     list-style:none;
   };

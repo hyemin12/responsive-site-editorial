@@ -33,15 +33,12 @@ const ImgLink = styled(Link)`
 export const Image = styled.img`
   display: block;
   width: ${({ imgWidth }) => (imgWidth ? "auto" : "100%")};
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   transition: 0.4s;
   ${({ type }) =>
     type === "link" &&
     `&:hover {
-    transform: translate(-50%, -50%) scale(1.1);
+   transform:  scale(1.1);
+   
   }`}
 `;
 export default Img;
