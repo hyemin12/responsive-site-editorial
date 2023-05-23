@@ -60,8 +60,8 @@ const Pagenation = ({ pageLength, setPage, page }) => {
   );
 };
 const Row = styled.div`
-  ${({ theme }) => theme.flexBox.flex()}
-  gap: 1em;
+  ${({ theme }) => theme.flexBox.flex("row", "center", "space-between")};
+  width: 100%;
 `;
 
 const PageNumber = styled.p`
@@ -74,6 +74,12 @@ const PageNumber = styled.p`
   cursor: pointer;
   ${({ active, theme }) =>
     active && `background-color:${theme.color.point}; color:#fff; `}
+  &:first-child {
+    margin-left: 1em;
+  }
+  &:last-child {
+    margin-right: 1em;
+  }
 `;
 
 export default Pagenation;

@@ -30,5 +30,8 @@ export const Default = styled.button`
   &:hover {
     background-color: rgba(245, 106, 106, 0.05);
   }
+  @media ${({ theme }) => theme.device.tablet} {
+    border: 2px solid #f56a6a;
+  }
 `;
 export default DefaultBtn;

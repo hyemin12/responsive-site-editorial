@@ -18,7 +18,6 @@ const PrimaryBtn = ({ type, size, text, disabled, fit, onClick }) => {
 };
 export const Primary = styled(Default)`
   background-color: ${({ theme }) => theme.color.point};
-  border: 3px solid #f56a6a;
   color: #fff;
   &:hover {
     background-color: ${({ theme }) => theme.color.point} !important;
