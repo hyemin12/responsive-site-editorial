@@ -16,10 +16,14 @@ const Menu = () => {
     {
       title: "Submenu",
       path: "",
-      submenu: ["lorem dolor", "Ipsum adipicing", "tempus magna"],
+      submenu: [
+        { title: "lorem dolor", path: "/lorem dolor" },
+        { title: "Ipsum adipicing", path: "/ipsum adipicing" },
+        { title: "tempus magna", path: "/tempus magna" },
+      ],
     },
-    { title: "Etiam Dolore", path: "" },
-    { title: "Adipicing", path: "" },
+    { title: "Etiam Dolore", path: "/etiam dolore" },
+    { title: "Adipicing", path: "/adipicing" },
   ];
   return (
     <ul className="menu">

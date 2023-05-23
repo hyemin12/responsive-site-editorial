@@ -9,10 +9,10 @@ import PrimaryBtn from "./elements/Buttons/PrimaryBtn";
 
 const MainPost = (props) => {
   const navigate = useNavigate();
-  const { title, id, text, img } = props;
+  const { title, id, text, img, category } = props;
   console.log(id);
   const handleNavigate = () => {
-    navigate(`/${id}`);
+    navigate(`/${category}`);
   };
 
   return (
