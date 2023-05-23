@@ -41,10 +41,8 @@ const Menu = () => {
 
               <SubMenuUl className="sub-menu" isVisible={visible}>
                 {submenu.map((element) => (
-                  <li key={`${path}-${element}`}>
-                    <SubNavItem to={element.toLowerCase()}>
-                      {element}
-                    </SubNavItem>
+                  <li key={`${path}-${element.title}`}>
+                    <SubNavItem to={element.path}>{element.title}</SubNavItem>
                   </li>
                 ))}
               </SubMenuUl>
