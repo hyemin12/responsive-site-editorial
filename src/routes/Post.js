@@ -17,13 +17,6 @@ const Post = () => {
   const post = data.contents.filter(
     (element) => element.category.toLowerCase() === postId
   )[0];
-  console.log(
-    id,
-    postId,
-    post,
-    data.contents[0].category,
-    data.contents[0].category.toLowerCase()
-  );
 
   // 페이지 이동 시 스크롤 위치 맨 위로 이동시키기
   useEffect(() => {
