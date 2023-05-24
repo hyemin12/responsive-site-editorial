@@ -80,6 +80,9 @@ const PageNumber = styled.p`
   &:last-child {
     margin-right: 1em;
   }
+  @media ${({ theme }) => theme.device.desktopWide} {
+    font-size: 1em;
+  }
 `;
 
 export default Pagenation;

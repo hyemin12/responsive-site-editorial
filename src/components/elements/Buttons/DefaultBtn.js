@@ -18,6 +18,7 @@ export const Default = styled.button`
   border: 3px solid #f56a6a;
   color: #f56a6a;
   ${({ size }) => size === "large" && `font-size: 0.9em;`}
+
   ${({ size }) => size === "small" && `font-size: 0.5em;`};
   ${({ fit }) => fit && `width:100%`};
   ${({ disabled }) =>
@@ -29,6 +30,11 @@ export const Default = styled.button`
     }`}
   &:hover {
     background-color: rgba(245, 106, 106, 0.05);
+  }
+
+  @media ${({ theme }) => theme.device.desktopWide} {
+    ${({ size }) => size === "large" && `font-size: 1.1em;`}
+    ${({ size }) => size === "small" && `font-size: 0.7em;`}
   }
   @media ${({ theme }) => theme.device.tablet} {
     border: 2px solid #f56a6a;

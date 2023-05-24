@@ -51,14 +51,14 @@ const GlobalStyle = createGlobalStyle`
       font-size:0.8em;
     }
   }
-  a {
-    color: ${theme.color.grey};
-    text-decoration:none;
-    transition:0.4s;
-    &:hover{
-      color: #f56a6a !important
-    }
-  }
+  // a {
+  //   color: ${theme.color.grey};
+  //   text-decoration:none;
+  //   transition:0.4s;
+  //   &:hover{
+  //     color: #f56a6a !important
+  //   }
+  // }
   a {
     color: ${theme.color.point};
     text-decoration:underline dotted ${theme.color.point};
@@ -102,6 +102,9 @@ const GlobalStyle = createGlobalStyle`
     text-transform:uppercase;
     transition:all 0.4s;
     cursor:pointer;
+    @media ${({ theme }) => theme.device.desktopWide} {
+      font-size: 0.9em;
+    }
   }
   blockquote{
     padding-left:2em;
