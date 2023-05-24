@@ -15,8 +15,8 @@ import { data } from "../data";
 
 import { FaSearch, FaEnvelope, FaPhone, FaHome } from "react-icons/fa";
 
-const SideBar = () => {
-  const [visible, setVisible] = useState(true);
+const SideBar = ({ visible, setVisible }) => {
+  // const [visible, setVisible] = useState(true);
 
   const [posts, setPosts] = useState([]);
   const innerRef = useRef(null);
