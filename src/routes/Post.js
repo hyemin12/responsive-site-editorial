@@ -37,7 +37,13 @@ const Post = () => {
         {post && (
           <>
             <Title text={title} size={"2.7em"} padding={"1.5em 0 1em 0"} />
-            <Img src={img} alt={title} width={"100%"} ratio={"1280 / 416"} />
+            <Img
+              src={img}
+              alt={title}
+              width={"100%"}
+              imgHeight={"100%"}
+              ratio={"1280 / 416"}
+            />
             <TextWrapper>
               {text.split("\n").map((t, idx) => (
                 <P theme={theme} key={idx}>

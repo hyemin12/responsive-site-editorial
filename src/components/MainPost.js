@@ -9,15 +9,22 @@ import PrimaryBtn from "./elements/Buttons/PrimaryBtn";
 
 const MainPost = (props) => {
   const navigate = useNavigate();
-  const { title, id, text, img, category } = props;
-  console.log(id);
+  const { title, text, img, category } = props;
+
   const handleNavigate = () => {
     navigate(`/${category}`);
   };
 
   return (
     <PostItem theme={theme}>
-      <Img width={"100%"} ratio={"13/8"} src={img} alt={title} type={"link"} />
+      <Img
+        width={"100%"}
+        ratio={"13/8"}
+        src={img}
+        alt={title}
+        type={"link"}
+        path={`/${category}`}
+      />
       <br />
       <Title text={title} />
       <TextWrapper>
