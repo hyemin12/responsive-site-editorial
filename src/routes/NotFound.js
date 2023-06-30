@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 import theme from "../styles/theme";
@@ -7,10 +7,6 @@ import PrimaryBtn from "../components/elements/Buttons/PrimaryBtn";
 
 const NotFound = () => {
   const navigate = useNavigate();
-
-  const goToHome = () => {
-    navigate("/");
-  };
 
   return (
     <Contanier theme={theme}>
@@ -23,7 +19,12 @@ const NotFound = () => {
           잘못된 경로이거나 알 수 없는 오류가 발생하였습니다. <br />
           홈화면으로 이동하시겠습니까?
         </H4>
-        <PrimaryBtn text={"이동하기"} onClick={goToHome} />
+        <PrimaryBtn
+          text={"이동하기"}
+          onClick={() => {
+            navigate("/");
+          }}
+        />
       </div>
     </Contanier>
   );
@@ -41,12 +42,13 @@ const Logo = styled.div`
   display: inline-block;
   padding: 0.25em 0.5em;
   margin-bottom: 1em;
-
   border-bottom: 3px solid ${({ theme }) => theme.color.point};
+
   font-size: 1.2em;
   font-weight: 400;
   text-decoration: none;
   color: ${({ theme }) => theme.color.grey};
+
   span {
     color: ${({ theme }) => theme.color.default};
     font-weight: 700;
@@ -54,7 +56,7 @@ const Logo = styled.div`
   }
 
   @media ${({ theme }) => theme.device.desktopWide} {
-    font-size: 1.4em;
+    font-size: 1.6em;
   }
 `;
 const H2 = styled.h2`
