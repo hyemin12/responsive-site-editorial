@@ -12,7 +12,7 @@ const MainPost = (props) => {
   const { title, text, img, category } = props;
 
   const handleNavigate = () => {
-    navigate(`/${category}`);
+    navigate(`/category/${category}`);
   };
 
   return (
@@ -23,7 +23,7 @@ const MainPost = (props) => {
         src={img}
         alt={title}
         type={"link"}
-        path={`/${category}`}
+        path={`/category/${category}`}
       />
       <br />
       <Title text={title} />

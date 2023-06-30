@@ -16,8 +16,8 @@ const Home = () => {
   const features = data.features;
 
   /** 포스트 데이터 가져오는 함수
-   * - json-server를 실행하면 서버에서 데이터를 가져오기
-   * - 서버에서 데이터 가져오는 것을 실패하면 data.js 파일에서 데이터 가져오기
+   * json-server를 실행하면 서버에서 데이터를 가져오기
+   * 서버에서 데이터 가져오는 것을 실패하면 data.js 파일에서 데이터 가져오기
    */
   const requestPost = async () => {
     try {

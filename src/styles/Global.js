@@ -8,7 +8,8 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
     margin:0;
     box-sizing:border-box
-  }  body{
+  }  
+  body{
     font-family: 'Roboto Slab', serif;
     font-weight: 400;
     color: #3D4449;
@@ -67,7 +68,7 @@ const GlobalStyle = createGlobalStyle`
       color: #f56a6a !important
     }
   };
-  img{object-fit:cover;}
+  img {object-fit:cover;}
 
   input, select ,textarea {
     display:block;
