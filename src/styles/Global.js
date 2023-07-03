@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import theme from "./theme";
 
-// font-family: 'Open Sans', sans-serif;
+import theme from "./theme";
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -13,6 +12,28 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto Slab', serif;
     font-weight: 400;
     color: #3D4449;
+  }
+
+  // TEXT TAG
+  h1,h2,h3,h4{
+    margin-bottom:1em;
+  }
+  h4{
+    @media ${theme.device.desktopWide}{
+      font-size:1.3em !important;
+    };
+  }
+  p {
+    font-family: "Open Sans", sans-serif;
+    color: ${theme.color.grey};
+    font-size: 0.9em;
+    line-height: 1.6;
+    @media ${theme.device.desktopWide}{
+      font-size:1em ;
+    };
+    @media ${theme.device.tablet}{
+      font-size:0.8em;
+    }
   }
   b{
     color: ${theme.color.default};
@@ -31,38 +52,21 @@ const GlobalStyle = createGlobalStyle`
     border:1px solid #ddd;
     font-size:1.1em;
   }
-  h1,h2,h3,h4{
-    margin-bottom:1em;
-  }
-  h4{
-    @media ${theme.device.desktopWide}{
-      font-size:1.3em !important;
-    };
-  }
-
-  p {
-    font-family: "Open Sans", sans-serif;
-    color: ${theme.color.grey};
-    font-size: 0.9em;
-    line-height: 1.6;
-    @media ${theme.device.desktopWide}{
-      font-size:1em ;
-    };
+  blockquote{
+    padding-left:2em;
+    border-left:3px solid #ccc;
+    color:${theme.color.grey};
+    font-family:  "Open Sans", sans-serif;
+    font-size:0.9em;
+    font-style:italic;
+    line-height:1.6;
     @media ${theme.device.tablet}{
       font-size:0.8em;
     }
   }
  
-  a {
-    color: ${theme.color.point};
-    text-decoration:underline dotted ${theme.color.point};
-    transition:0.4s;
-    &:hover{
-      color: #f56a6a !important
-    }
-  };
   img {object-fit:cover;}
-
+  
   input, select ,textarea {
     display:block;
     border: 1px solid rgba(210,215,217,0.75);   
@@ -82,8 +86,18 @@ const GlobalStyle = createGlobalStyle`
     }
 
   }
+
   li{
     list-style:none;
+  }; 
+
+  a {
+    color: ${theme.color.point};
+    text-decoration:underline dotted ${theme.color.point};
+    transition:0.4s;
+    &:hover{
+      color: #f56a6a !important
+    }
   };
   button{
     height: 4em;
@@ -100,18 +114,8 @@ const GlobalStyle = createGlobalStyle`
       font-size: 0.9em;
     }
   }
-  blockquote{
-    padding-left:2em;
-    border-left:3px solid #ccc;
-    color:${theme.color.grey};
-    font-family:  "Open Sans", sans-serif;
-    font-size:0.9em;
-    font-style:italic;
-    line-height:1.6;
-    @media ${theme.device.tablet}{
-      font-size:0.8em;
-    }
-  }
+ 
+  // TABLE
   table{
     border-collapse: collapse;
     font-family: "Open Sans", sans-serif;

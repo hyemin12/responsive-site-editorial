@@ -91,6 +91,7 @@ const ImgWrapper = styled.div`
   }
 `;
 const Img = styled(Image)`
+  display: block;
   width: auto;
 `;
 export default Intro;
