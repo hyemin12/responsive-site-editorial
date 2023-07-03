@@ -5,8 +5,6 @@ import { H3 } from "./elements/Title";
 import { Image } from "./elements/Img";
 import PrimaryBtn from "./elements/Buttons/PrimaryBtn";
 
-// import Img from "./elements/Img";
-
 const Intro = () => {
   return (
     <IntroSection theme={theme}>
@@ -73,7 +71,7 @@ const SubTitle = styled.h4`
 const P = styled.p`
   margin-bottom: 2em;
   @media ${({ theme }) => theme.device.desktopWide} {
-    font-size: 1.1em;
+    font-size: 1em;
   }
 `;
 const ImgWrapper = styled.div`
@@ -81,11 +79,11 @@ const ImgWrapper = styled.div`
   width: 50%;
   height: 100%;
   border-radius: 6px;
-  aspect-ratio: 81 / 69;
+  aspect-ratio: 8 / 6;
   position: relative;
   overflow: hidden;
   @media ${({ theme }) => theme.device.tabletPortrait} {
-    aspect-ratio: 166/304;
+    aspect-ratio: 16 / 23;
   }
   @media ${({ theme }) => theme.device.mobile} {
     width: 100%;

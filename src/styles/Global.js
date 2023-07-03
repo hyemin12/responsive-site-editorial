@@ -52,14 +52,7 @@ const GlobalStyle = createGlobalStyle`
       font-size:0.8em;
     }
   }
-  // a {
-  //   color: ${theme.color.grey};
-  //   text-decoration:none;
-  //   transition:0.4s;
-  //   &:hover{
-  //     color: #f56a6a !important
-  //   }
-  // }
+ 
   a {
     color: ${theme.color.point};
     text-decoration:underline dotted ${theme.color.point};
