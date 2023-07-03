@@ -81,14 +81,12 @@ const FeatureWrapper = styled.ul`
   }
 `;
 const FeaturesTitle = styled(H3)`
-margin-bottom:2.5em;
-border-bottom:3px solid ${({ theme }) => theme.color.point};
-font-size:1.6em;
-@media ${({ theme }) => theme.device.desktopWide} {
-  margin-bottom:4em;
-}
-
-text={""} size={"1.6em"} border={"bottom"} />
+  margin-bottom: 2.5em;
+  border-bottom: 3px solid ${({ theme }) => theme.color.point};
+  font-size: 1.6em;
+  @media ${({ theme }) => theme.device.desktopWide} {
+    margin-bottom: 4em;
+  }
 `;
 
 const PostsWrapper = styled.ul`

@@ -7,6 +7,7 @@ import { useState } from "react";
 
 const Layout = ({ children }) => {
   const [visible, setVisible] = useState(true);
+  console.log(visible);
   return (
     <Container theme={theme}>
       <SideBar visible={visible} setVisible={setVisible} />
@@ -27,9 +28,12 @@ const Main = styled.div`
   padding: 7em 5em;
   position: relative;
   width: ${({ visible }) => (visible ? "calc(100% - 20em)" : "100%")};
+
   @media ${({ theme }) => theme.device.tablet} {
-    width: ${({ visible }) => (visible ? "calc(100% - 18em)" : "100%")};
+    // width: ${({ visible }) => (visible ? "calc(100% - 18em)" : "100%")};
+    width: 100%;
   }
+
   @media ${({ theme }) => theme.device.tablet} {
     padding: 7em 3em;
     padding-bottom: 0;
