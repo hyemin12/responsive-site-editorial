@@ -38,7 +38,7 @@ const Home = () => {
       <Intro />
 
       {/* FEATURES */}
-      <Section>
+      <Section className="features-section">
         <FeaturesTitle>Features</FeaturesTitle>
         <FeatureWrapper theme={theme}>
           {features &&
@@ -49,7 +49,7 @@ const Home = () => {
       </Section>
 
       {/* Posts */}
-      <Section>
+      <Section className="posts-section">
         <Title text={"Ipsum sed Posts"} size={"1.6em"} border={"bottom"} />
         <PostsWrapper>
           {posts && posts.map((post) => <MainPost {...post} key={post.id} />)}

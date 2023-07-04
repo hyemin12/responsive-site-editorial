@@ -5,7 +5,7 @@ import theme from "../styles/theme";
 const Feature = (props) => {
   const { title, text, icon } = props;
   return (
-    <FeatureItem theme={theme}>
+    <FeatureItem theme={theme} className="feature-item">
       <FeatureIcon>
         <I>{icon}</I>
       </FeatureIcon>
